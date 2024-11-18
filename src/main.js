@@ -1,10 +1,20 @@
 import '../style.css'
 
-const saludo = 'Hola ómo estás'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <h1>${saludo}</h1>
-  </div>
-`
+export const initializeDynamicContent = () => {
+  const saludo = 'Hola cómo estás';
+
+  const elemento = document.querySelector('#prueba');
+  const titulo = document.querySelector('#titulo');
+
+  if (titulo) console.log(titulo.innerHTML);
+  if (elemento) {
+    elemento.innerHTML = `
+        <div>
+          <h1>${saludo}</h1>
+        </div>
+      `;
+  }
+};
+
 
