@@ -20,11 +20,17 @@ const routes = {
 const handleLocation = async () => {
     const path = window.location.pathname;
     const route = routes[path] || routes[404];
-    const html = await fetch(route).then((data) => data.text());
-    document.getElementById("main-page").innerHTML = html;
-
-
-    initializeDynamicContent()
+    try {
+        const response = await fetch(route);
+        if (!response.ok) throw new Error("Failed to load page");
+        const html = await response.text();
+        document.getElementById("main-page").innerHTML = html;
+        document.title = path.slice(1) || 'Home'
+        initializeDynamicContent();
+    } catch (error) {
+        console.error("Error loading route:", error);
+        document.getElementById("main-page").innerHTML = "<h1>Error loading page</h1>";
+    }
 };
 
 

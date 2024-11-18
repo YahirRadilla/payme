@@ -1,4 +1,6 @@
+import '../src/features/auth/login.css'
 import '../style.css'
+
 
 
 export const initializeDynamicContent = () => {
