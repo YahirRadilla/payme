@@ -20,5 +20,6 @@
 ## Desarrollado por:
  ### Yahir Radilla Del valle
  ### David Andrés Hernandez García
+ ### Aram Rafael Murillo Dominguez
  ### Mauro Fonseca Medina
   
