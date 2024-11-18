@@ -1,4 +1,4 @@
-import '../src/features/auth/login.css'
+import '../src/features/auth/register.css'
 import '../style.css'
 
 
