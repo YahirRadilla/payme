@@ -1,6 +1,6 @@
 import '../style.css'
 
-const saludo = 'Hola como estás'
+const saludo = 'Hola cómo estás'
 
 document.querySelector('#app').innerHTML = `
   <div>
