@@ -1,5 +1,7 @@
-import { initializeDynamicContent } from '../../../main.js'
-import { createHeader } from '../../components/header.js';
+import '../../../features/auth/register.css'
+import '../../../features/auth/login.css'
+import '../../../../style.css'
+import { getForm } from '../../../features/auth/forms.js'
 
 
 const route = (event) => {
@@ -26,7 +28,7 @@ const handleLocation = async () => {
         const html = await response.text();
         document.getElementById("main-page").innerHTML = html;
         document.title = path.slice(1) || 'Home'
-        initializeDynamicContent();
+        getForm();
     } catch (error) {
         console.error("Error loading route:", error);
         document.getElementById("main-page").innerHTML = "<h1>Error loading page</h1>";
