@@ -4,6 +4,7 @@ import '../../../../style.css'
 import { getForm } from '../../../features/auth/forms.js'
 
 
+
 const route = (event) => {
     event = event;
     event.preventDefault();
@@ -28,6 +29,7 @@ const handleLocation = async () => {
         const html = await response.text();
         document.getElementById("main-page").innerHTML = html;
         document.title = path.slice(1) || 'Home'
+
         getForm();
     } catch (error) {
         console.error("Error loading route:", error);
