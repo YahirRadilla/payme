@@ -1,8 +1,9 @@
 import '../../../features/auth/register.css'
 import '../../../features/auth/login.css'
 import '../../../../style.css'
-import { getForm } from '../../../features/auth/forms.js'
+import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
+import { HandleApi } from '../api.js'
 
 
 
@@ -31,8 +32,21 @@ const handleLocation = async () => {
         document.getElementById("main-page").innerHTML = html;
         document.title = path.slice(1) || 'Home'
 
-        getForm();
-        getUser();
+        switch (path) {
+            case '/':
+                getUser();
+                break
+            case '/register':
+                getAuth();
+                break
+            case '/login':
+                getAuth()
+
+                break
+        }
+
+
+
     } catch (error) {
         console.error("Error loading route:", error);
         document.getElementById("main-page").innerHTML = "<h1>Error loading page</h1>";

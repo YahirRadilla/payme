@@ -1,6 +1,6 @@
 
 
-const API_URL = import.meta.env.API_URL || 'http://localhost:3003';
+const API_URL = import.meta.env.API_URL || 'http://localhost:3003'
 
 export class HandleApi {
     // Login
@@ -15,21 +15,21 @@ export class HandleApi {
                 body: JSON.stringify({ email, password }),
                 mode: 'cors',
                 credentials: 'include'
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
 
             if (response.ok) {
-                return data;
+                return data
             } else {
-                return data;
+                return data
             }
         } catch (error) {
-            console.error(error.message);
-            return data;
+            console.error(error.message)
+            return data
         }
     }
-
+    // Verificar token
     static async verifyToken() {
         try {
             console.log(`${API_URL}/login`)
@@ -40,42 +40,41 @@ export class HandleApi {
                 },
                 mode: 'cors',
                 credentials: 'include'
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
 
             if (response.ok) {
-                return { data: data, status: response.status };
+                return { data: data, status: response.status }
             } else {
-                return data;
+                return data
             }
         } catch (error) {
-            console.error(error.message);
-            return data;
+            console.error(error.message)
+            return data
         }
     }
 
     // Registro
-    static async register({ name, firstLastname, secondLastname, email, password }) {
+    static async register({ firstName, firtsLastname, phone, email, password }) {
         try {
             const response = await fetch(`${API_URL}/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name, firstLastname, secondLastname, email, password }),
-            });
+                body: JSON.stringify({ firstName, firtsLastname, phone, email, password }),
+                mode: 'cors',
+            })
 
-            const data = await response.json();
+            const data = await response.json()
             if (response.ok) {
-                console.log('Registro exitoso:', data);
-                return data;
+                return data
             } else {
-                throw new Error(data.message || 'Error al registrar usuario');
+                return data
             }
         } catch (error) {
-            console.error('Error al registrar usuario:', error);
-            throw error;
+            return data
         }
     }
 
@@ -87,18 +86,18 @@ export class HandleApi {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 },
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
             if (response.ok) {
-                console.log('Transferencias obtenidas:', data);
-                return data;
+                console.log('Transferencias obtenidas:', data)
+                return data
             } else {
-                throw new Error(data.message || 'Error al obtener transferencias');
+                throw new Error(data.message || 'Error al obtener transferencias')
             }
         } catch (error) {
-            console.error('Error al obtener transferencias:', error);
-            throw error;
+            console.error('Error al obtener transferencias:', error)
+            throw error
         }
     }
 
@@ -110,18 +109,18 @@ export class HandleApi {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 },
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
             if (response.ok) {
-                console.log('Pagos obtenidos:', data);
-                return data;
+                console.log('Pagos obtenidos:', data)
+                return data
             } else {
-                throw new Error(data.message || 'Error al obtener pagos');
+                throw new Error(data.message || 'Error al obtener pagos')
             }
         } catch (error) {
-            console.error('Error al obtener pagos:', error);
-            throw error;
+            console.error('Error al obtener pagos:', error)
+            throw error
         }
     }
 
@@ -133,18 +132,18 @@ export class HandleApi {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 },
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
             if (response.ok) {
-                console.log('Ingresos obtenidos:', data);
-                return data;
+                console.log('Ingresos obtenidos:', data)
+                return data
             } else {
-                throw new Error(data.message || 'Error al obtener ingresos');
+                throw new Error(data.message || 'Error al obtener ingresos')
             }
         } catch (error) {
-            console.error('Error al obtener ingresos:', error);
-            throw error;
+            console.error('Error al obtener ingresos:', error)
+            throw error
         }
     }
 
@@ -156,18 +155,18 @@ export class HandleApi {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 },
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
             if (response.ok) {
-                console.log('Retiros obtenidos:', data);
-                return data;
+                console.log('Retiros obtenidos:', data)
+                return data
             } else {
-                throw new Error(data.message || 'Error al obtener retiros');
+                throw new Error(data.message || 'Error al obtener retiros')
             }
         } catch (error) {
-            console.error('Error al obtener retiros:', error);
-            throw error;
+            console.error('Error al obtener retiros:', error)
+            throw error
         }
     }
 
@@ -181,18 +180,18 @@ export class HandleApi {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 },
                 body: JSON.stringify({ dateTransaction }),
-            });
+            })
 
-            const data = await response.json();
+            const data = await response.json()
             if (response.ok) {
-                console.log('Filtrado por fecha:', data);
-                return data;
+                console.log('Filtrado por fecha:', data)
+                return data
             } else {
-                throw new Error(data.message || 'Error al filtrar por fecha');
+                throw new Error(data.message || 'Error al filtrar por fecha')
             }
         } catch (error) {
-            console.error('Error al filtrar por fecha:', error);
-            throw error;
+            console.error('Error al filtrar por fecha:', error)
+            throw error
         }
     }
 }
