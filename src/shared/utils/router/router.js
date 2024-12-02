@@ -2,6 +2,7 @@ import '../../../features/auth/register.css'
 import '../../../features/auth/login.css'
 import '../../../../style.css'
 import { getForm } from '../../../features/auth/forms.js'
+import { getUser } from '../../../features/page/home.js'
 
 
 
@@ -31,6 +32,7 @@ const handleLocation = async () => {
         document.title = path.slice(1) || 'Home'
 
         getForm();
+        getUser();
     } catch (error) {
         console.error("Error loading route:", error);
         document.getElementById("main-page").innerHTML = "<h1>Error loading page</h1>";
