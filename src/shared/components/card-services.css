@@ -24,7 +24,7 @@
     justify-content: start;
     background-color: #FFFFFF; 
     border: 1px solid #FFFFFF; 
-    padding: 12px 15px;
+    padding: 8px 5px;
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
