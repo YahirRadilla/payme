@@ -8,10 +8,13 @@ export const getUser = async () => {
     const path = window.location.pathname;
 
 
+
     await monitorUserSession()
-    const params = new URLSearchParams(window.location.search);
-    const user = atob(params.get('user'));
-    console.log(user)
+    const encodedId = localStorage.getItem('userId');
+    const userId = atob(encodedId);
+
+
+    console.log(userId)
 
     Card()
 

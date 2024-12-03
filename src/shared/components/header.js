@@ -12,6 +12,7 @@ const notyf = new Notyf({
 });
 
 const handleLogOutClick = async () => {
+    localStorage.removeItem('userId');
     const data = await HandleApi.logout()
     notyf.success(data.message)
     window.location.href = `/login`

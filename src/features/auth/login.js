@@ -20,8 +20,9 @@ export async function getLogged(data) {
         const verifyToken = await HandleApi.verifyToken()
         if (verifyToken.status === 200) {
             console.log(login.data)
-            const encodedId = btoa(login.data.id)
-            window.location.href = `/?user=${encodeURIComponent(encodedId)}`
+            const encodedId = btoa(login.data.id);
+            localStorage.setItem('userId', encodedId);
+            window.location.href = '/';
         }
         return
     }
