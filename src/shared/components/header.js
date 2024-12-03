@@ -11,10 +11,14 @@ const notyf = new Notyf({
     dismissible: true,
 });
 
-const handleClick = async () => {
+const handleLogOutClick = async () => {
     const data = await HandleApi.logout()
     notyf.success(data.message)
     window.location.href = `/login`
+}
+
+const handleConfigClick = () => {
+    window.location.href = `/user-settings`
 }
 
 export const createHeader = () => {
@@ -55,7 +59,7 @@ export const createHeader = () => {
                             
                             <ul>
                             <li>
-                                <button>Settings</button>
+                                <button id="userSettingsButton">Settings</button>
                             </li>
                             <li>
                                 <button id="logoutButton">Log out</button>
@@ -70,5 +74,8 @@ export const createHeader = () => {
     `;
 
     const logoutButton = document.getElementById('logoutButton');
-    logoutButton.addEventListener('click', handleClick);
+    const userSettingsButton = document.getElementById('userSettingsButton');
+
+    logoutButton.addEventListener('click', handleLogOutClick);
+    userSettingsButton.addEventListener('click', handleConfigClick)
 };
