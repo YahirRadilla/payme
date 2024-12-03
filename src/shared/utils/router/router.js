@@ -54,6 +54,9 @@ const handleLocation = async () => {
                 createHeader()
                 UserSettings()
                 break
+            case '/cards':
+                createHeader()
+                break
         }
 
 
