@@ -3,6 +3,8 @@ import 'notyf/notyf.min.css';
 import { getLogged } from './login';
 import { getRegistered } from './register';
 import { HandleApi } from '../../shared/utils/api'
+import '../../features/auth/register.css'
+import '../../features/auth/login.css'
 
 
 const notyf = new Notyf({

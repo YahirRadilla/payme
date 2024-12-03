@@ -1,5 +1,4 @@
-import '../../../features/auth/register.css'
-import '../../../features/auth/login.css'
+
 import '../../../../style.css'
 import '../../../features/page/pages/user-settings.css'
 import '../../../features/page/pages/edit-profile.css'
