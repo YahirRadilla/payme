@@ -12,22 +12,24 @@ import { AddTransactionPreview } from '../../../shared/components/transactions-p
 export const getHome = async () => {
 
     const path = window.location.pathname;
-
-
-
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
     const userId = atob(encodedId);
 
+    const { data } = await HandleApi.getTransactions({ id: userId })
 
-    //const si = await HandleApi.getTransactions({ id: userId })
 
-    //console.log(si)
     Card()
     EmptyCard()
     Title('Yahir')
     AddCardServices()
-    AddTransactionPreview("Deposito prueba", "03-12-24", "payment", "+$1000.00")
+
+    data.forEach(element => {
+        console.log(element)
+        AddTransactionPreview(element.message, element.created_at, element.created_at, element.amount)
+    });
+
+
 
 
 }
