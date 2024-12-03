@@ -4,6 +4,7 @@ export const AddCardServices = () => {
 
     containerServices.innerHTML = `
     <div>
+        <h1 class="card-title">Services</h1>
         <div class="services-card">
             <ul class="services-list">
             <li class="service-item">
