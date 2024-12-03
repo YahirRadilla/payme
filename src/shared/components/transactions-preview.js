@@ -30,7 +30,7 @@ export const AddTransactionPreview = (description, date, type, amount) => {
             <p>${date}</p>
         </div>
         <div class="transaction-amount">
-            <span>${amount}</span>
+            <span>$${amount}</span>
         </div>
     </div>
     `;

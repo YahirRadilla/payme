@@ -27,7 +27,7 @@ export const getHome = async () => {
     EmptyCard()
     Title('Yahir')
     AddCardServices()
-    AddTransactionPreview("Deposito prueba", "03-12-24", "payment", "+$1000.00")
+    AddTransactionPreview("Deposito prueba", "03-12-24", "payment", "1000.00")
 
 
 }
