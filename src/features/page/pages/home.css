@@ -1,6 +1,6 @@
 .home-main {
     padding: 32px;
-    max-width: 80%;
+    max-width: 70%;
     margin: auto;
     height: 70vh;
 
@@ -31,14 +31,13 @@
     margin-bottom: 15px;
 }
 
-.cards-content{
+.cards-content {
     margin-bottom: 56px;
 }
-.left-selection-home {
-    
-}
 
-.left-content-sections{
+.left-selection-home {}
+
+.left-content-sections {
     margin-top: 20px
 }
 
@@ -46,32 +45,31 @@
     margin-bottom: 15px;
 }
 
-.services-content{
+.services-content {}
 
-    
-    
-}
-
-.services-container {
-
-}
+.services-container {}
 
 .all-right-content {
     min-width: 30%;
-    
+
+}
+
+#card-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 
-.right-selection-header{
+.right-selection-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
-    
+
 }
 
 .right-content-home {
     display: flex;
     height: 100%;
-    
+
 }
