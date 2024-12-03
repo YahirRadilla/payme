@@ -55,8 +55,8 @@
 }
 
 #card-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 
@@ -65,7 +65,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
-    
+
 
 }
 
