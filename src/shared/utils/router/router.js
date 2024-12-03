@@ -1,8 +1,6 @@
 
 import '../../../../style.css'
 import '../../../shared/components/404.css'
-import '../../../shared/components/card-form.css'
-import '../../../shared/components/card-services.css'
 import '../../../features/page/pages/user-settings.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getHome } from '../../../features/page/pages/home.js'
