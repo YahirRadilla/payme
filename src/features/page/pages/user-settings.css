@@ -26,7 +26,10 @@
 }
 
 #main-section {
+    
+    justify-content: space-between;
     width: 100%;
+    min-height: 500px;
 }
 
 .section-buttons {

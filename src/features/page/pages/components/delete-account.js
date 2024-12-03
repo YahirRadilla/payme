@@ -1,31 +1,19 @@
-import '../delete-account.css'
+import '../delete-account.css';
 
 export const DeleteAccount = () => {
 
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = `
-        <div>
-            <label class="titles-content">Delete Account Information</label>
-            <div class="inline-inputs">
-                <div class="input-container">
-                    <label for="name" class="name">First Name:</label>
-                    <input required id="name" name="firstName" placeholder="Enter your name" type="text" class="input">
+        <div class="container-forms">
+            <div class="container-elements">
+                <div>
+                    <label class="titles-content">Delete Account Information</label>
                 </div>
-                <div class="input-container">
-                    <label for="lastname" class="name">Last Name:</label>
-                    <input id="lastname" name="lastName" placeholder="Enter your last name" type="text" class="input">
-                </div>
-                <div class="input-container">
-                    <label for="email" class="name">E-Mail:</label>
-                    <input required id="email" name="emal" placeholder="Enter your email" type="email" class="input">
-                </div>
-                <div class="input-container">
-                    <label for="phone" class="name">Phone Number:</label>
-                    <input required id="phone" name="phone" placeholder="Enter your phone number" type="number"
-                        class="input">
+                <div>
+                    <span class="warning-alert">Warning: This action cannot be undone. Once completed, your account will be permanently deleted.</span>
                 </div>
             </div>
-            <input class="input" type="submit" value="Update Profile">
+            <input class="input-delete" type="submit" value="Permanently delete account">
         </div>
     `;
 };
