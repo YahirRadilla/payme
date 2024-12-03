@@ -15,6 +15,14 @@
     text-align: left;
 }
 
+.transactions-scroll {
+    max-height: 415px; 
+    overflow-y: auto; 
+    overflow-x: auto; 
+    border: 0px solid #ddd;
+    border-radius: 8px;
+}
+
 .transactions-table {
     width: 100%;
     border-collapse: collapse;
@@ -48,7 +56,7 @@
 }
 
 .transactions-table .negative-amount {
-    
+
     color: #FF6B6B;
     font-weight: bold;
 }
@@ -56,4 +64,17 @@
 .transactions-table .positive-amount {
     color: #3FBF73;
     font-weight: bold;
+}
+
+.transactions-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.transactions-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.transactions-scroll::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
 }
