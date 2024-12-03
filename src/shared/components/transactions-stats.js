@@ -4,6 +4,7 @@ export const AddStatsCard = () => {
     const containerStats = document.getElementById("stats-card-container");
 
     containerStats.innerHTML = `
+    <h1 class="card-stats-title">Transactions</h1>
     <div class="stats-card">
         <div class="stat-item">
             <div class="icon-circle blue">
