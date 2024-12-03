@@ -4,6 +4,7 @@ import '../../../shared/components/404.css'
 import '../../../features/page/pages/user-settings.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getHome } from '../../../features/page/pages/home.js'
+import { getCards } from '../../../features/page/pages/cards.js'
 import { HandleApi } from '../api.js'
 import { createHeader } from '../../components/header.js'
 import { createFooter } from '../../components/footer.js'
@@ -41,7 +42,7 @@ const handleLocation = async () => {
             case '/':
                 createHeader()
                 getHome();
-                
+
                 break
             case '/transactions':
                 createHeader()
@@ -59,6 +60,8 @@ const handleLocation = async () => {
                 break
             case '/cards':
                 createHeader()
+                getCards();
+                
                 break
         }
 
