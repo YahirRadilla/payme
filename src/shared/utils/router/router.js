@@ -5,8 +5,7 @@ import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
 import { HandleApi } from '../api.js'
 import { createHeader } from '../../components/header.js'
-import { EditProfile } from '../../../features/page/pages/components/edit-profile.js'
-
+import { UserSettings } from '../../../features/page/pages/user-settings.js'
 
 
 const route = (event) => {
@@ -52,7 +51,7 @@ const handleLocation = async () => {
                 break
             case '/user-settings':
                 createHeader()
-                EditProfile()
+                UserSettings()
                 getUser()
                 break
         }
