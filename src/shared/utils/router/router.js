@@ -1,6 +1,7 @@
 import '../../../features/auth/register.css'
 import '../../../features/auth/login.css'
 import '../../../../style.css'
+import '../../../features/page/pages/user-settings.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
 import { HandleApi } from '../api.js'
@@ -21,6 +22,7 @@ const routes = {
     "/register": "/src/features/auth/register.html",
     "/": "/src/features/page/pages/home.html",
     "/transactions": "/src/features/page/pages/transactions.html",
+    "/user-settings": "/src/features/page/pages/user-settings.html",
 };
 
 const handleLocation = async () => {
