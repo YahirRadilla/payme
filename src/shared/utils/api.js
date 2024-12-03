@@ -6,13 +6,37 @@ export class HandleApi {
     // Login
     static async login({ email, password }) {
         try {
-            console.log(`${API_URL}/login`)
             const response = await fetch(`${API_URL}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ email, password }),
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+
+            if (response.ok) {
+                return data
+            } else {
+                return data
+            }
+        } catch (error) {
+            console.error(error.message)
+            return data
+        }
+    }
+
+    // Logout
+    static async logout() {
+        try {
+            const response = await fetch(`${API_URL}/logout`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
