@@ -6,8 +6,10 @@
 
 }
 
-.home-main h3 {
+.home-main a {
     text-align: right;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .home-content {
