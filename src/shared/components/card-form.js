@@ -1,7 +1,8 @@
+import "./card-form.css";
 export const AddCardForm = () => {
-    const container = document.getElementById('card-container');
+    const containerForm = document.getElementById('card-form-container');
 
-    container.innerHTML = `
+    containerForm.innerHTML = `
         <div>
             <h1 class="card-title">Add Card</h1>
             <div class="card-container">
