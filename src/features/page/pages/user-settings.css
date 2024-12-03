@@ -52,10 +52,6 @@
     #user-settings h1{
         font-size: 1.5em;
     }
-    .titles-content{
-        font-size: 1.2em;
-    }
-    
 
 }
 
@@ -71,18 +67,6 @@
     }
     #user-settings h1{
         font-size: 1.5em;
-    }
-    .titles-content{
-        font-size: 1.2em;
-    }
-    .input-container {
-        margin: 20px 0px;
-    }
-    .inline-inputs {
-        display: block;
-        gap: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
     }
     #settings-content{
         display: flex;
