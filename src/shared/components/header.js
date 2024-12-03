@@ -2,20 +2,19 @@ export const createHeader = () => {
 
     const header = document.getElementById('header')
     header.innerHTML = `
-        <div style= "max-width: 80%; margin: auto; ">
-            <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-                <div style="display: flex; align-items: center; gap: 70px;">
-                    <img src="logo.svg" alt="Logo" style="width: 110px; margin-right: 10px;">
-                    <ul style="display: flex; gap: 20px; list-style: none; padding: 0; margin: 0;">
-                        <li><a href="/" style="text-decoration: none; color: black;">Home</a></li>
-                        <li><a href="/transactions" style="text-decoration: none; color: black;">Transactions</a></li>
-                        <li><a href="/cards" style="text-decoration: none; color: black;">Cards</a></li>
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <img src="logo.svg" alt="Logo" class="logo">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                        <li><a href="/cards" class="nav-link">Cards</a></li>
                     </ul>
                 </div>
-                
-                <div style="display: flex; align-items: center; gap: 10px; font-size: 1rem;">
+                <div class="navbar-right">
                     <span>John Doe</span>
-                    <a href="#"><img src="UserIcon.svg" alt="User" style="width: 30px; height: 30px; border-radius: 50%;"></a>
+                    <a href="#"><img src="UserIcon.svg" alt="User" class="user-icon"></a>
                 </div>
             </nav>
         </div>
