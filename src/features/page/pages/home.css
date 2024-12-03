@@ -1,4 +1,72 @@
 .home-main {
+    padding: 32px;
     max-width: 80%;
     margin: auto;
+    height: 70vh;
+
+}
+
+.home-main h3 {
+    text-align: right;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+    height: 100%;
+    padding-top: 32px;
+}
+
+.all-left-content {
+    min-width: 66%;
+}
+
+.left-selection-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.left-selection-home {
+    
+}
+
+.left-content-sections{
+    margin-top: 20px
+}
+
+.services-header {
+    
+}
+
+.services-content{
+
+    
+    
+}
+
+.services-container {
+
+}
+
+.all-right-content {
+    min-width: 30%;
+    
+}
+
+
+.right-selection-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+}
+
+.right-content-home {
+    display: flex;
+    height: 100%;
+    
 }
