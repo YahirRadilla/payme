@@ -1,11 +1,11 @@
-import '../change-password.css';
+import '../delete-account.css'
 
-export const ChangePassword = () => {
+export const DeleteAccount = () => {
 
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = `
         <div>
-            <label class="titles-content">Change Password</label>
+            <label class="titles-content">Delete Account Information</label>
             <div class="inline-inputs">
                 <div class="input-container">
                     <label for="name" class="name">First Name:</label>

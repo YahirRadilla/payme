@@ -43,6 +43,7 @@
 
 
 .active-section{
+    border-left: 4px solid #515DEF;
     color: #515DEF;
 }
 
