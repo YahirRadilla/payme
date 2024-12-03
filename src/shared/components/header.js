@@ -1,3 +1,5 @@
+import './header.css'
+
 export const createHeader = () => {
 
     const header = document.getElementById('header')

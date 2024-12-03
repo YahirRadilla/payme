@@ -2,7 +2,6 @@
 import '../../../../style.css'
 import '../../../features/page/pages/user-settings.css'
 import '../../../features/page/pages/edit-profile.css'
-import '../../components/header.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
 import { HandleApi } from '../api.js'
