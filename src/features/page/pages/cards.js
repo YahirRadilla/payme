@@ -5,9 +5,9 @@ import { AddCardServices } from '../../../shared/components/card-services.js';
 
 export const getCards = async () => {
 
-    Card();
+/*     Card();
     AddCardForm();
-    AddCardServices();
+    AddCardServices(); */
 
 
 

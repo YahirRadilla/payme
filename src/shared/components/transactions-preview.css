@@ -1,0 +1,30 @@
+.transaction-card {
+
+}
+.transaction-item {
+
+}
+
+.transaction-item .icon {
+
+}
+
+.deposit-icon {
+    background-color: #ccffec;
+    background-image: url('deposit-icon.svg');
+
+}
+
+.icon-withdrawal {
+    background-color: #ffd5d5;
+    background-image: url('withdrawal-icon.svg');
+    /* Placeholder for an icon */
+    
+    background-position: center;
+}
+
+
+
+.service-item:last-child {
+    margin-bottom: 0;
+}
