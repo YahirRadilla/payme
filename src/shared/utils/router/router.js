@@ -23,6 +23,7 @@ const routes = {
     "/": "/src/features/page/pages/home.html",
     "/transactions": "/src/features/page/pages/transactions.html",
     "/user-settings": "/src/features/page/pages/user-settings.html",
+    "/cards": "/src/features/page/pages/cards.html"
 };
 
 const handleLocation = async () => {
