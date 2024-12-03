@@ -43,12 +43,11 @@ const handleLocation = async () => {
             case '/':
                 createHeader()
                 getHome();
-                createFooter()
+
                 break
             case '/transactions':
                 createHeader()
                 getTransactions();
-                createFooter()
                 break
             case '/register':
                 getAuth();
@@ -64,7 +63,6 @@ const handleLocation = async () => {
             case '/cards':
                 createHeader()
                 getCards()
-                createFooter()
                 break
         }
 
