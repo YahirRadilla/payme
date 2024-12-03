@@ -6,6 +6,7 @@ import { getAuth } from '../../../features/auth/getAuth.js'
 import { getHome } from '../../../features/page/pages/home.js'
 import { HandleApi } from '../api.js'
 import { createHeader } from '../../components/header.js'
+import { createFooter } from '../../components/footer.js'
 import { UserSettings } from '../../../features/page/pages/user-settings.js'
 
 
@@ -40,6 +41,7 @@ const handleLocation = async () => {
             case '/':
                 createHeader()
                 getHome();
+                
                 break
             case '/transactions':
                 createHeader()
@@ -53,6 +55,7 @@ const handleLocation = async () => {
             case '/user-settings':
                 createHeader()
                 UserSettings()
+                createFooter()
                 break
             case '/cards':
                 createHeader()
