@@ -5,7 +5,6 @@ export const monitorUserSession = async () => {
 
         const cookies = document.cookie.split(';').map(cookie => cookie.trim());
         const hasCookie = cookies.some(cookie => cookie.startsWith('access_token='));
-        console.log(hasCookie)
         if (!hasCookie) {
 
             const verifyToken = await HandleApi.verifyToken();

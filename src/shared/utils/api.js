@@ -103,6 +103,27 @@ export class HandleApi {
         }
     }
 
+    static async getTransactions({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/transfers/${id}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                console.log('Transacciones obtenidas:', data)
+                return data
+            } else {
+                throw new Error(data.message || 'Error al obtener Transacciones')
+            }
+        } catch (error) {
+            console.error('Error al obtener Transacciones:', error)
+            throw error
+        }
+    }
+
     // Transferencias
     static async getTransfers() {
         try {

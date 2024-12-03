@@ -16,7 +16,9 @@ export const getHome = async () => {
     const userId = atob(encodedId);
 
 
-    console.log(userId)
+    //const si = await HandleApi.getTransactions({ id: userId })
+
+    //console.log(si)
 
     Card()
     Title('Yahir')
