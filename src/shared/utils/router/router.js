@@ -10,7 +10,7 @@ import { HandleApi } from '../api.js'
 import { createHeader } from '../../components/header.js'
 import { createFooter } from '../../components/footer.js'
 import { UserSettings } from '../../../features/page/pages/user-settings.js'
-
+import { getTransactions } from '../../../features/page/pages/transactions.js'
 
 const route = (event) => {
     event = event;
@@ -47,6 +47,7 @@ const handleLocation = async () => {
                 break
             case '/transactions':
                 createHeader()
+                getTransactions();
                 break
             case '/register':
                 getAuth();
@@ -62,7 +63,6 @@ const handleLocation = async () => {
             case '/cards':
                 createHeader()
                 getCards();
-                
                 break
         }
 
