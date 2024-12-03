@@ -21,17 +21,18 @@
 
 .transaction-card {
     display: flex;
-    flex-direction: row;
+    gap: 10px;
     justify-content: space-between;
+
     padding-bottom: 16px;
     font-weight: bold;
-
 }
 
 
 .transaction-details {
     display: flex;
     flex-direction: column;
+
 }
 
 .transaction-details p {
@@ -41,45 +42,38 @@
 
 .transaction-amount {
     display: flex;
+
     align-items: center;
     color: #3FBF73;
 }
-
-
 
 .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
+    border-radius: 1000px;
+    min-width: 50px;
+    min-height: 50px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
 }
+
 
 .transaction-card.transfer .icon-container {
     border: 2px solid #54BCF1;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
 }
 
 .transaction-card.payment .icon-container {
     border: 2px solid #FFA15E;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
 }
 
 .transaction-card.income .icon-container {
     border: 2px solid #3FBF73;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
 }
 
 .transaction-card.withdrawal .icon-container {
     border: 2px solid #FF5C5C;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
 }
 
 .transaction-card.transfer .transaction-amount {
@@ -96,4 +90,11 @@
 
 .transaction-card.withdrawal .transaction-amount {
     color: #FF5C5C;
+}
+
+
+
+#transaction-icon {
+    width: 24px;
+    height: 24px;
 }
