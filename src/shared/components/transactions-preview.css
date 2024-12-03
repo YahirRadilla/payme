@@ -32,39 +32,49 @@
 }
 
 
+
 .icon-container{
-    display: flex;    
+    display: flex;
     align-items: center;
     border-radius: 50;
 }
 
-.deposit-icon {
-    
+.transaction-card.transfer .icon-container {
+    border: 3px solid #54BCF1;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.transaction-card.payment .icon-container {
+    border: 3px solid #FFA15E; 
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.transaction-card.income .icon-container {
     border: 3px solid #3FBF73;
     border-radius: 50%;
-    
-    padding: 5px;
+    padding: 10px;
 }
 
-.withdrawal-icon {
+.transaction-card.withdrawal .icon-container {
     border: 3px solid #FF5C5C;
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px;
 }
 
-.payment-icon {
-    border: 3px solid #FFA15E;
-    border-radius: 50%;
-    padding: 5px;
+.transaction-card.transfer .transaction-amount {
+    color: #54BCF1; 
 }
 
-.transfer-icon {
-    border: 3px solid #515DEF;
-    border-radius: 50%;
-    padding: 5px;
+.transaction-card.payment .transaction-amount {
+    color: #FFA15E;
 }
 
+.transaction-card.income .transaction-amount {
+    color: #3FBF73;
+}
 
-.service-item:last-child {
-    margin-bottom: 0;
+.transaction-card.withdrawal .transaction-amount {
+    color: #FF5C5C; 
 }
