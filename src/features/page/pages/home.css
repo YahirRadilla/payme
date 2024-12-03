@@ -65,11 +65,16 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
+    
 
 }
 
 .right-content-home {
     display: flex;
     height: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 4px 4px 4px grey;
+    width: 100%;
 
 }

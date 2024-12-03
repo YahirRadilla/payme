@@ -3,11 +3,11 @@ import { Card } from '../../../shared/components/card.js';
 import { AddCardForm } from '../../../shared/components/card-form.js';
 import { AddCardServices } from '../../../shared/components/card-services.js';
 
-export const getCards = async () => {
+export const getCards = () => {
 
-/*     Card();
+    Card();
     AddCardForm();
-    AddCardServices(); */
+    AddCardServices();
 
 
 
