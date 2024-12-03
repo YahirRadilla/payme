@@ -6,6 +6,7 @@ import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
 import { HandleApi } from '../api.js'
 import { createHeader } from '../../components/header.js'
+import { EditProfile } from '../../../features/page/pages/components/edit-profile.js'
 
 
 
@@ -49,6 +50,11 @@ const handleLocation = async () => {
                 break
             case '/login':
                 getAuth()
+                break
+            case '/user-settings':
+                createHeader()
+                EditProfile()
+                getUser()
                 break
         }
 
