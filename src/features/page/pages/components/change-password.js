@@ -1,11 +1,9 @@
-import '../edit-profile.css'
-
-export const EditProfile = () => {
+export const ChangePassword = () => {
 
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = `
         <div>
-            <label class="titles-content">Edit Profile Information</label>
+            <label class="titles-content">Change Password</label>
             <div class="inline-inputs">
                 <div class="input-container">
                     <label for="name" class="name">First Name:</label>

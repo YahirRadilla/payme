@@ -37,12 +37,13 @@
     border-right: 1px solid #AAAAAA;
 }
 
-.section-buttons a{
+.section-buttons button{
     font-weight: bold;
 }
 
-.section-buttons a:hover{
-    color: #0f1baa;
+
+.active-section{
+    color: #515DEF;
 }
 
 @media (width < 960px) {
