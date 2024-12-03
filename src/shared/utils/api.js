@@ -105,7 +105,7 @@ export class HandleApi {
 
     static async getTransactions({ id }) {
         try {
-            const response = await fetch(`${API_URL}/transfers/${id}`, {
+            const response = await fetch(`${API_URL}/transactions/${id}`, {
                 method: 'GET',
                 mode: 'cors',
                 credentials: 'include'
