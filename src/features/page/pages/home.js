@@ -26,7 +26,12 @@ export const getHome = async () => {
 
     data.forEach(element => {
         console.log(element)
-        AddTransactionPreview(element.message, element.created_at, element.created_at, element.amount)
+        AddTransactionPreview({
+            description: element.message,
+            date: element.created_at,
+            type: element.type,
+            amount: element.amount
+        })
     });
 
 

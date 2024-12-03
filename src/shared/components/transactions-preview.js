@@ -1,5 +1,5 @@
 import "./transactions-preview.css";
-export const AddTransactionPreview = (description, date, type, amount) => {
+export const AddTransactionPreview = ({ description, date, type, amount }) => {
     let iconSrc;
     switch (type) {
         case 'transfer':
