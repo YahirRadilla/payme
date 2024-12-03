@@ -1,5 +1,6 @@
 
 import '../../../../style.css'
+import '../../../shared/components/404.css'
 import '../../../features/page/pages/user-settings.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
