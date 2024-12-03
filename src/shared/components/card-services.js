@@ -5,25 +5,25 @@ export const AddCardServices = () => {
     containerServices.innerHTML = `
     <div>
         <div class="services-card">
-            <ul class="services-list">
-            <li class="service-item">
-                <span class="icon transfer"></span>
-                <span class="text">Transfer</span>
-            </li>
-            <li class="service-item">
-                <span class="icon payment"></span>
-                <span class="text">Payment of services</span>
-            </li>
-            <li class="service-item">
-                <span class="icon deposit"></span>
-                <span class="text">Deposit</span>
-            </li>
-            <li class="service-item">
-                <span class="icon withdrawal"></span>
-                <span class="text">Withdrawal</span>
-            </li>
-            </ul>
-       </div>
+            <div class="services-list">
+                <button class="service-item">
+                    <span class="icon transfer"></span>
+                    <span class="text">Transfer</span>
+                </button>
+                <button class="service-item">
+                    <span class="icon payment"></span>
+                    <span class="text">Payment of services</span>
+                </button>
+                <button class="service-item">
+                    <span class="icon deposit"></span>
+                    <span class="text">Deposit</span>
+                </button>
+                <button class="service-item">
+                    <span class="icon withdrawal"></span>
+                    <span class="text">Withdrawal</span>
+                </button>
+            </div>
+        </div>
     </div>
     `;
 };

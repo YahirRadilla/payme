@@ -1,3 +1,4 @@
+/* Estilos de la tarjeta */
 .services-card {
     background-color: white;
     border-radius: 25px;
@@ -7,16 +8,31 @@
     width: 100%;
 }
 
+/* Estilos del contenedor de los botones */
 .services-list {
-    list-style: none;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
     margin: 0;
+    padding: 0;
 }
 
+/* Estilos de los botones */
 .service-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: start;
+    background-color: #FFFFFF; 
+    border: 1px solid #FFFFFF; 
+    padding: 12px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.service-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.02); /* Pequeño efecto de ampliación */
 }
 
 .service-item .icon {
@@ -30,7 +46,6 @@
 .icon.transfer {
     background-color: #cce7ff;
     background-image: url('transfer-icon.svg');
-    /* Placeholder for an icon */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -38,7 +53,6 @@
 .icon.payment {
     background-color: #ffebcc;
     background-image: url('payment-icon.svg');
-    /* Placeholder for an icon */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -46,7 +60,6 @@
 .icon.deposit {
     background-color: #ccffec;
     background-image: url('deposit-icon.svg');
-    /* Placeholder for an icon */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -54,7 +67,6 @@
 .icon.withdrawal {
     background-color: #ffd5d5;
     background-image: url('withdrawal-icon.svg');
-    /* Placeholder for an icon */
     background-repeat: no-repeat;
     background-position: center;
 }
