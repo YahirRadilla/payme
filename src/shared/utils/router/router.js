@@ -3,7 +3,7 @@ import '../../../../style.css'
 import '../../../shared/components/404.css'
 import '../../../features/page/pages/user-settings.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
-import { getUser } from '../../../features/page/pages/home.js'
+import { getHome } from '../../../features/page/pages/home.js'
 import { HandleApi } from '../api.js'
 import { createHeader } from '../../components/header.js'
 import { UserSettings } from '../../../features/page/pages/user-settings.js'
@@ -39,11 +39,10 @@ const handleLocation = async () => {
         switch (path) {
             case '/':
                 createHeader()
-                getUser();
+                getHome();
                 break
             case '/transactions':
                 createHeader()
-                getUser();
                 break
             case '/register':
                 getAuth();
@@ -54,7 +53,6 @@ const handleLocation = async () => {
             case '/user-settings':
                 createHeader()
                 UserSettings()
-                getUser()
                 break
         }
 

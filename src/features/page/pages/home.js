@@ -5,7 +5,7 @@ import { Title } from '../../../shared/components/title.js';
 import { HandleApi } from '../../../shared/utils/api.js'
 import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
 
-export const getUser = async () => {
+export const getHome = async () => {
 
     const path = window.location.pathname;
 
