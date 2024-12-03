@@ -35,7 +35,7 @@
 .transactions-table th {
     font-size: 0.85rem;
     text-transform: uppercase;
-    color: #555;
+    color: #515DEF;
 }
 
 .transactions-table tbody tr:hover {
@@ -47,12 +47,13 @@
     color: #333;
 }
 
-.negative-amount {
-    color: #e63946;
+.transactions-table .negative-amount {
+    
+    color: #FF6B6B;
     font-weight: bold;
 }
 
-.positive-amount {
-    color: #2a9d8f;
+.transactions-table .positive-amount {
+    color: #3FBF73;
     font-weight: bold;
 }

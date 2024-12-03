@@ -1,4 +1,4 @@
-import "./transactions.css";
+import "./transactions-table.css";
 
 export const AddTransactions = () => {
     const containerTransactions = document.getElementById("transactions-container");
