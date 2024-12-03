@@ -9,9 +9,6 @@ export const getHome = async () => {
 
     const path = window.location.pathname;
 
-    Card()
-    Title('Yahir')
-
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
     const userId = atob(encodedId);
@@ -21,7 +18,7 @@ export const getHome = async () => {
 
     //console.log(si)
 
-/*     Card()
+    Card()
     Title('Yahir')
- */
+
 }
