@@ -1,0 +1,69 @@
+.services-card {
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 384px;
+    width: 100%;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.service-item .icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.icon.transfer {
+    background-color: #cce7ff;
+    background-image: url('transfer-icon.svg');
+    /* Placeholder for an icon */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon.payment {
+    background-color: #ffebcc;
+    background-image: url('payment-icon.svg');
+    /* Placeholder for an icon */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon.deposit {
+    background-color: #ccffec;
+    background-image: url('deposit-icon.svg');
+    /* Placeholder for an icon */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon.withdrawal {
+    background-color: #ffd5d5;
+    background-image: url('withdrawal-icon.svg');
+    /* Placeholder for an icon */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.text {
+    font-size: 1rem;
+    color: #242424;
+}
+
+.service-item:last-child {
+    margin-bottom: 0;
+}
