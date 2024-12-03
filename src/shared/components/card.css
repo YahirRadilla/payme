@@ -1,6 +1,6 @@
 .card {
-    width: 245px;
-    height: 155px;
+    width: 384px;
+    height: 215px;
     position: relative;
     border-radius: 15px;
     overflow: hidden;
@@ -22,9 +22,10 @@
 
 .info-container {
     width: 100%;
+
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 20px;
 }
 
 .info-card {
@@ -34,32 +35,32 @@
 
 .names {
 
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .expiration {
     align-self: flex-end;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .balance {
     align-self: flex-end;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .cvv {
     align-self: flex-end;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .balance {
     align-self: flex-end;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .serial {
     align-self: center;
     letter-spacing: 2px;
-    font-size: 15px;
+    font-size: 24px;
     font-family: monospace;
 }
