@@ -9,19 +9,20 @@
 
 }
 
+.icon-container{
+    border-radius: 50%;
+    padding: 10px;
+
+}
+
 .deposit-icon {
     background-color: #ccffec;
-    background-image: url('deposit-icon.svg');
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 
 }
 
-.icon-withdrawal {
-    background-color: #ffd5d5;
-    background-image: url('withdrawal-icon.svg');
-    /* Placeholder for an icon */
-    
-    background-position: center;
-}
 
 
 
