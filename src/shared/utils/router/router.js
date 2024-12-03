@@ -4,6 +4,7 @@ import '../../../../style.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getUser } from '../../../features/page/home.js'
 import { HandleApi } from '../api.js'
+import { createHeader } from '../../components/header.js'
 
 
 
@@ -34,6 +35,11 @@ const handleLocation = async () => {
 
         switch (path) {
             case '/':
+                createHeader()
+                getUser();
+                break
+            case '/transactions':
+                createHeader()
                 getUser();
                 break
             case '/register':
@@ -41,7 +47,6 @@ const handleLocation = async () => {
                 break
             case '/login':
                 getAuth()
-
                 break
         }
 

@@ -36,14 +36,20 @@ const validateForm = (data) => {
     return true
 }
 
-export const getAuth = async () => {
 
-
+const isLogged = async () => {
     const verifyToken = await HandleApi.verifyToken()
+
     console.log(verifyToken)
     if (verifyToken.status === 200) {
         window.location.href = '/'
     }
+}
+
+export const getAuth = async () => {
+
+    await isLogged()
+
 
     const form = document.getElementById('form')
     form.addEventListener('submit', async e => {

@@ -65,6 +65,7 @@ export class HandleApi {
                 },
                 body: JSON.stringify({ firstName, firtsLastname, phone, email, password }),
                 mode: 'cors',
+                credentials: 'include'
             })
 
             const data = await response.json()
@@ -86,6 +87,8 @@ export class HandleApi {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 },
+                mode: 'cors',
+                credentials: 'include'
             })
 
             const data = await response.json()

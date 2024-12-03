@@ -26,7 +26,12 @@ export async function getLogged(data) {
         return
     }
     if (login.status === 404) {
-        console.log(login.data)
+
         notyf.error(login.message)
     }
+    if (login.status === 401) {
+
+        notyf.error(login.message)
+    }
+
 }
