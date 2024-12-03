@@ -23,11 +23,11 @@ export const getHome = async () => {
     //const si = await HandleApi.getTransactions({ id: userId })
 
     //console.log(si)
-
     Card()
     EmptyCard()
     Title('Yahir')
     AddCardServices()
-    AddTransactionPreview()
+    AddTransactionPreview("Deposito prueba", "03-12-24", "payment", "+$1000.00")
+
 
 }

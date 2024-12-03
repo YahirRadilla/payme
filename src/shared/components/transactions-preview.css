@@ -46,7 +46,23 @@
     padding: 5px;
 }
 
+.withdrawal-icon {
+    border: 3px solid #FF5C5C;
+    border-radius: 50%;
+    padding: 5px;
+}
 
+.payment-icon {
+    border: 3px solid #FFA15E;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.transfer-icon {
+    border: 3px solid #515DEF;
+    border-radius: 50%;
+    padding: 5px;
+}
 
 
 .service-item:last-child {
