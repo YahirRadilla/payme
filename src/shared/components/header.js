@@ -45,7 +45,7 @@ export const createHeader = () => {
                         <span> </span>
                     </button>
                     <div class="navbar-right">
-                        <span id="username">John Doe</span>
+                        <span ></span>
                         <label class="popup">
                         <input type="checkbox" />
                         <div tabindex="0" class="burger">
@@ -104,17 +104,17 @@ export const createHeader = () => {
     const currentPath = window.location.pathname;
     if (currentPath === '/') {
         document.getElementById('homeLink').classList.add('active');
-    } else if(currentPath === '/transactions') {
+    } else if (currentPath === '/transactions') {
         document.getElementById('transactionsLink').classList.add('active');
-    } else if(currentPath === '/cards') {
+    } else if (currentPath === '/cards') {
         document.getElementById('cardsLink').classList.add('active');
     }
 
     if (currentPath === '/') {
         document.getElementById('sideHomeLink').classList.add('active');
-    } else if(currentPath === '/transactions') {
+    } else if (currentPath === '/transactions') {
         document.getElementById('sideTransactionsLink').classList.add('active');
-    } else if(currentPath === '/cards') {
+    } else if (currentPath === '/cards') {
         document.getElementById('sideCardsLink').classList.add('active');
     }
 
