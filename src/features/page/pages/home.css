@@ -1,5 +1,6 @@
 .home-main {
     padding-top: 32px;
+    padding-bottom: 32px;
     max-width: 70%;
     margin: auto;
 
@@ -12,8 +13,10 @@
 }
 
 .home-content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: space-between;
+
     gap: 46px;
     height: 100%;
     padding-top: 32px;
@@ -76,4 +79,13 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
 
+}
+
+
+@media (width < 1780px) {
+
+    .home-content {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        ;
+    }
 }
