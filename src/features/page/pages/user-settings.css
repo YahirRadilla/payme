@@ -81,7 +81,7 @@
     }
 }
 
-@media (width < 660px) {
+@media (width < 694px) {
     .section-buttons {
         flex-direction: row;
         gap: 16px;

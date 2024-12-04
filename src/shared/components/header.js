@@ -28,7 +28,6 @@ export const createHeader = () => {
     const header = document.getElementById('header')
     header.innerHTML = `
         <header style="border-bottom: 1px solid #ddd; box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);">
-
             <div class="container">
                 <nav class="navbar">
                     <div class="navbar-left">
@@ -39,6 +38,11 @@ export const createHeader = () => {
                             <li><a href="/cards" class="nav-link">Cards</a></li>
                         </ul>
                     </div>
+                    <button class="burger-menu" id="burgerMenu">
+                        <span> </span>
+                        <span> </span>
+                        <span> </span>
+                    </button>
                     <div class="navbar-right">
                         <span>John Doe</span>
                         <label class="popup">
@@ -72,18 +76,38 @@ export const createHeader = () => {
                 </nav>
             </div>
         </header>
+        <aside class="side-menu" id="sideMenu">
+            <div class="sideMenu-elements">
+                <ul>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/transactions" class="nav-link">Transactions</a></li>
+                    <li><a href="/cards" class="nav-link">Cards</a></li>
+                </ul>
+                <img src="logo.svg" alt="Logo" class="logo">
+            </div>
+        </aside>
     `;
 
     const logoutButton = document.getElementById('logoutButton');
     const userSettingsButton = document.getElementById('userSettingsButton');
 
+    const burgerMenu = document.getElementById('burgerMenu');
+    const sideMenu = document.getElementById('sideMenu');
+
     logoutButton.addEventListener('click', handleLogOutClick);
     userSettingsButton.addEventListener('click', handleConfigClick)
 
-    /* const burgerMenu = document.getElementById('burgerMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-
     burgerMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active'); 
-    }   ); */
+        sideMenu.classList.toggle('active');
+
+        window.addEventListener('mousedown', outsideClose);
+    });
+
+    const outsideClose = (event) => {
+        if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
+            sideMenu.classList.remove('active');
+            window.removeEventListener('mousedown', outsideClose);
+        }
+    }
 };
+
