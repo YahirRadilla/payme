@@ -1,4 +1,4 @@
-#user-settings{
+#user-settings {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -8,11 +8,11 @@
     padding-top: 32px;
 }
 
-#settings-content{
+#settings-content {
     display: flex;
     background-color: #FFFFFF;
     border-radius: 25px;
-    box-shadow: 4px 4px 4px grey;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombreado suave */
     gap: 32px;
     padding: 32px;
     width: 100%;
@@ -26,7 +26,6 @@
 }
 
 #main-section {
-    
     justify-content: space-between;
     width: 100%;
     min-height: 500px;
@@ -35,29 +34,51 @@
 .section-buttons {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
     padding-right: 32px;
     border-right: 1px solid #AAAAAA;
 }
 
-.section-buttons button{
+.section-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 12px;
+    cursor: pointer;
     font-weight: 600;
+    font-size: 1rem;
+    color: #242424;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-
-.active-section{
-    border-left: 4px solid #515DEF;
+.section-buttons button:hover {
+    background-color: rgba(81, 93, 239, 0.1);
+    transform: scale(1.02);
     color: #515DEF;
+}
+
+.section-buttons button:active {
+    background-color: #515DEF;
+    color: #FFFFFF;
+    transform: scale(0.98); /* Efecto de compresión */
+}
+
+.active-section {
+    background-color: #515DEF;
+    color: #FFFFFF;
+    border-left: 4px solid #FFFFFF;
 }
 
 @media (width < 960px) {
     #user-settings {
         max-width: 90%;
     }
-    #user-settings h1{
+    #user-settings h1 {
         font-size: 1.5em;
     }
-
 }
 
 @media (width < 660px) {
@@ -70,17 +91,16 @@
         justify-content: center;
         font-size: 14px;
     }
-    #user-settings h1{
+    #user-settings h1 {
         font-size: 1.5em;
     }
-    #settings-content{
+    #settings-content {
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
-    .active-section{
+    .active-section {
         border-bottom: 4px solid #515DEF;
         border-left: none;
     }
-
 }
