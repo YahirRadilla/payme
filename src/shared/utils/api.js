@@ -194,6 +194,29 @@ export class HandleApi {
         }
     }
 
+    static async postCard({ id, cardNumber, expirationDate, cvv, balance }) {
+        try {
+            const response = await fetch(`${API_URL}/card/create/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ cardNumber, expirationDate, cvv, balance }),
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return { data, status: response.status }
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
     static async getTotalTransfers({ id }) {
         try {
             const response = await fetch(`${API_URL}/transfers/total/${id}`, {
