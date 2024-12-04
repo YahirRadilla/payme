@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main-page {
+    flex: 1; /* Esto hace que el contenido principal se expanda según sea necesario */
+}
+
 html {
     font-size: 100%;
     line-height: 1.5;

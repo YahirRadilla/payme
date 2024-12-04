@@ -1,20 +1,14 @@
-
+import './footer.css';
 
 export const createFooter = () => {
 
     const footer = document.getElementById('footer');
 
     footer.innerHTML = `
-        <footer style="border-top: 1px solid #ddd;">
-            <div class="container">
-                <nav class="navbar">
-                    <div class="navbar-left">
-                        <img src="logo.svg" alt="Logo" class="logo">
-                    </div>
-                    <div class="navbar-right">
-                        <span>Copyrigth ©2024 all rights reserved</span>
-                    </div>
-                </nav>
+        <footer class="footer-page">
+            <div class="footer-container">
+                <img src="logo.svg" alt="Logo" class="logo">
+                &copy; 2024 PayMe. all rights reserved.
             </div>
         </footer>
     `;

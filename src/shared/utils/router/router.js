@@ -42,15 +42,16 @@ const handleLocation = async () => {
         switch (path) {
             case '/':
                 createHeader()
-                getHome();
-
+                getHome()
+                createFooter()
                 break
             case '/transactions':
                 createHeader()
-                getTransactions();
+                getTransactions()
+                createFooter()
                 break
             case '/register':
-                getAuth();
+                getAuth()
                 break
             case '/login':
                 getAuth()
@@ -63,6 +64,7 @@ const handleLocation = async () => {
             case '/cards':
                 createHeader()
                 getCards()
+                createFooter()
                 break
         }
 
