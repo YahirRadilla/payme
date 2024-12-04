@@ -7,9 +7,9 @@ export const transferContent = ({ cards }) => `
     </header>
     <div class="modal-content-content">
         <div class="modal__content">
-            <form class="transfer-inputs">
-                <label for="transfer-card-select" class="name">Source Card</label>
-                <select required name="transfer-card-select">                    
+            <form id="transfer-form" class="transfer-inputs">
+                <label for="transfer_card_select" class="name">Source Card</label>
+                <select required name="transfer_card_select">                    
                     <option disabled>Select a type</option>       
                      ${cards.map(
     (element) =>

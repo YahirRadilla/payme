@@ -48,6 +48,30 @@ const depositFormEventListener = async ({ user }) => {
     })
 }
 
+const transferFormEventListener = async ({ user }) => {
+    const transferForm = document.getElementById('transfer-form')
+    transferForm.addEventListener('submit', async e => {
+        e.preventDefault()
+
+        const transferData = Object.fromEntries(
+            new FormData(e.target)
+        )
+
+        const { data } = await HandleApi.postTransfer({ id: user[0].id, recipientEmail: transferData.email, sourceCard: transferData.transfer_card_select, amount: transferData.amount, message: transferData.message })
+        console.log(data)
+
+        if (data.status === 200) {
+            notyf.success('The transfer has been a success')
+            setTimeout(() => {
+                location.reload()
+            }, 500);
+
+            return
+        }
+
+    })
+}
+
 
 
 export const Modal = async ({ type, cards, user }) => {
@@ -59,6 +83,7 @@ export const Modal = async ({ type, cards, user }) => {
     switch (type) {
         case 'transfer':
             modal.innerHTML = `${transferContent({ cards })}`
+            await transferFormEventListener({ user })
             break;
         case 'payment':
             modal.innerHTML = `${serviceContent({ cards })}`

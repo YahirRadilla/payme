@@ -125,6 +125,29 @@ export class HandleApi {
         }
     }
 
+    static async postTransfer({ id, recipientEmail, sourceCard, amount, message }) {
+        try {
+            const response = await fetch(`${API_URL}/transfers/create/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ recipientEmail, sourceCard, amount, message }),
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return { data, status: response.status }
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
     static async getTransactions({ id }) {
         try {
             const response = await fetch(`${API_URL}/transactions/${id}`, {
