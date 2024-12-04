@@ -10,62 +10,22 @@ import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.j
 import { AddCardServices } from '../../../shared/components/card-services.js';
 import { AddTransactionPreview } from '../../../shared/components/transactions-preview.js';
 import { Modal } from '../../../shared/components/modals/modal.js'
-
+import { modalListener } from '../../../shared/utils/modal-listener.js';
 
 
 
 export const getHome = async () => {
+
+
     Modal()
+    modalListener()
 
-    document.addEventListener("click", (event) => {
-        const modal = document.getElementById('modal-1')
-        const classList = event.target.classList
-        if (classList.contains('modal__btn') || classList.contains('modal__close')) {
-            modal.classList.add('modal-none')
-            modal.classList.remove('micromodal-slide.is-open')
-        }
-
-
-        if (classList.contains('transfer-item')) {
-            modal.classList.add('micromodal-slide.is-open')
-            modal.classList.remove('modal-none')
-            console.log('first')
-        }
-
-        if (classList.contains('payment-item')) {
-            modal.classList.add('micromodal-slide.is-open')
-            modal.classList.remove('modal-none')
-            console.log('first')
-        }
-
-        if (classList.contains('deposit-item')) {
-            modal.classList.add('micromodal-slide.is-open')
-            modal.classList.remove('modal-none')
-            console.log('first')
-        }
-
-        if (classList.contains('withdrawal-item')) {
-            modal.classList.add('micromodal-slide.is-open')
-            modal.classList.remove('modal-none')
-            console.log('first')
-        }
-
-    });
-
-
-
-
-
-    const path = window.location.pathname;
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
     const userId = atob(encodedId);
-
     const { data: transactions } = await HandleApi.getTransactions({ id: userId })
     const { data: cards } = await HandleApi.getCards({ id: userId })
     const { data: user } = await HandleApi.getUser({ id: userId })
-
-
 
 
 

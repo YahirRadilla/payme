@@ -8,20 +8,24 @@ export const depositContent = () => `
     <div class="modal-content-content">
         <div class="modal__content">
             <form class="transfer-inputs">
-                <label for="deposit-card-select" class="name">Source Card</label>
-                <select required name="transfer-card-select">                    
-                    <option disabled>Select a card</option>                
-                    <option value="income">1234</option>
-                    <option value="expense">1234</option>
-                </select>  
+                <div class="input-container">
+                    <label for="deposit-card-select" class="name">Source Card</label>
+                    <select required name="transfer-card-select">                    
+                        <option disabled>Select a card</option>                
+                        <option value="income">1234</option>
+                        <option value="expense">1234</option>
+                    </select>  
+                </div>
 
-                <label for="deposit-desination-card-select" class="name">Destination Card</label>
-                <select required name="transfer-card-select">                    
-                    <option disabled>Select a card</option>                
-                    <option value="income">1234</option>
-                    <option value="expense">1234</option>
-                </select>  
-
+                <div class="input-container">
+                    <label for="deposit-desination-card-select" class="name">Destination Card</label>
+                    <select required name="transfer-card-select">                    
+                        <option disabled>Select a card</option>                
+                        <option value="income">1234</option>
+                        <option value="expense">1234</option>
+                    </select>  
+                </div>
+                
                 <div class="input-container">
                     <label for="amount" class="name">Amount</label>
                     <input required id="amount" name="amount" placeholder="$70,000" type="number"

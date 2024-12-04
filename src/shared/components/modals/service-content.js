@@ -6,17 +6,21 @@ export const serviceContent = () => `
 <div class="modal-content-content">
     <div class="modal__content">
         <form class="transfer-inputs">
-            <label for="transfer-card-select" class="name">Source Card</label>
-            <select required name="transfer-card-select" id="transfer-card-select">
-                <option disabled selected>**** 1234</option>
-                <!-- Agrega más opciones si es necesario -->
-            </select>
+            <div class="input-container">
+                <label for="transfer-card-select" class="name">Source Card</label>
+                <select required name="transfer-card-select" id="transfer-card-select">
+                    <option disabled selected>**** 1234</option>
+                    <!-- Agrega más opciones si es necesario -->
+                </select>
+            </div>
 
-            <label for="service-select" class="name">Service</label>
-            <select required name="service-select" id="service-select">
-                <option disabled selected>Electricity</option>
-                <!-- Agrega más opciones si es necesario -->
-            </select>
+            <div class="input-container">
+                <label for="service-select" class="name">Service</label>
+                <select required name="service-select" id="service-select">
+                    <option disabled selected>Electricity</option>
+                    <!-- Agrega más opciones si es necesario -->
+                </select>
+            </div>
 
             <div class="input-container">
                 <label for="reference" class="name">Reference</label>
