@@ -41,6 +41,9 @@ export const getHome = async () => {
     });
     if (cards.length === 1) {
         EmptyCard()
+    } else if (cards.length === 0) {
+        EmptyCard()
+        EmptyCard()
     }
 
 

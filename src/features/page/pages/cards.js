@@ -61,25 +61,30 @@ export const getCards = async () => {
 
     console.log(cards)
 
-    let countCard = 0;
+
     cards.forEach(element => {
-        if (countCard < 3) {
-            Card({
-                cardNumber: formatCardNumber(element.card_number),
-                expiredDate: formatToCardExpiration(element.expiration_date),
-                cvv: element.cvv,
-                balance: element.balance,
-                cardName: user[0].first_name
-            })
-            countCard++
-        }
+
+        Card({
+            cardNumber: formatCardNumber(element.card_number),
+            expiredDate: formatToCardExpiration(element.expiration_date),
+            cvv: element.cvv,
+            balance: element.balance,
+            cardName: user[0].first_name
+        })
+
+
     });
     if (cards.length === 2) {
         EmptyCard()
     } else if (cards.length === 1) {
         EmptyCard()
         EmptyCard()
+    } else if (cards.length === 0) {
+        EmptyCard()
+        EmptyCard()
+        EmptyCard()
     }
+
 
 
     AddCardForm()

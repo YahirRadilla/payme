@@ -10,8 +10,7 @@ export const AddTransactions = ({ transactions }) => {
         <table class="transactions-table">
             <thead>
                 <tr>
-                    <th>Description</th>
-                    <th>Folio</th>
+                    <th>Description</th>                    
                     <th>Type</th>
                     <th>Source Card</th>
                     <th>Destination Card</th>
@@ -23,8 +22,7 @@ export const AddTransactions = ({ transactions }) => {
                 ${transactions.map(
         (element) =>
             `<tr>
-                            <td data-label="Description">${element.message.length === 0 ? 'Sin descripción' : element.message}</td>
-                            <td data-label="Folio">#1234567890</td>
+                            <td data-label="Description">${element.message.length === 0 ? 'Sin descripción' : element.message}</td>                            
                             <td data-label="Type">${element.type}</td>
                             <td data-label="Source Card">${element.source_card.substring(0, 3)} ****</td>
                             <td data-label="Destination Card"> ${element.source_card.substring(0, 3) ?? element.destination_card.substring(0, 3)} ****</td>
