@@ -1,0 +1,25 @@
+#main-container {
+    padding-top: 32px;
+    max-width: 70%;
+    margin: auto;
+    height: 70vh;
+  }
+  
+  #card-container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom:20px;
+    border-radius: 10px;
+  }
+  
+  #card-form-services-container {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+  }
+  
+  
+  #card-form-container,
+  #card-services-container {
+    border-radius: 10px;
+  }  
