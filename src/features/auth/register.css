@@ -50,17 +50,24 @@ label {
 
 .input[type="submit"] {
     margin-top: 20px;
-    border: none;
+    border: 1px solid #FFFFFF;
     outline: none;
     background-color: #515DEF;
+    color: #FFFFFF;
     padding: 10px;
-    border-radius: 7px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 400;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
     width: 100%;
     height: 50px;
-    transform: .3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input[type="submit"]:hover {
+    background-color: rgba(81, 93, 239, 0.1);
+    transform: scale(1.02);
+    color: #515DEF; 
 }
 
 #checkbox-form {
