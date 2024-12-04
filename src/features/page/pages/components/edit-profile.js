@@ -4,6 +4,7 @@ export const EditProfile = () => {
 
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = `
+    <form id="form" action="">
         <div class="container-forms">
             <div class="container-elements">
                 <label class="titles-content">Edit Profile Information</label>
@@ -29,5 +30,6 @@ export const EditProfile = () => {
             </div>
             <input class="input" type="submit" value="Update Profile">
         </div>
+    </form>
     `;
 };
