@@ -17,7 +17,7 @@ import { modalListener } from '../../../shared/utils/modal-listener.js';
 export const getHome = async () => {
 
 
-    Modal()
+
     modalListener()
 
     await monitorUserSession()

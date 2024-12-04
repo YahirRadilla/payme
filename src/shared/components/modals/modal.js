@@ -8,17 +8,24 @@ import { depositContent } from './deposit-content'
 
 
 
-export const Modal = () => {
+export const Modal = ({ type }) => {
 
-    const Modal = document.getElementById('modal-container')
+    const modal = document.getElementById('modal-content')
 
-    Modal.innerHTML = `
-    <div class="modal micromodal-slide modal-none" id="modal-1" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-                ${withdrawalContent()}
-            </div>
-        </div>
-    </div>
-    `;
+    switch (type) {
+        case 'transfer':
+            modal.innerHTML = `${transferContent()}`
+            break;
+        case 'payment':
+            modal.innerHTML = `${serviceContent()}`
+            break;
+        case 'deposit':
+            modal.innerHTML = `${depositContent()}`
+            break;
+        case 'withdrawal':
+            modal.innerHTML = `${withdrawalContent()}`
+            break;
+    }
+
+
 };

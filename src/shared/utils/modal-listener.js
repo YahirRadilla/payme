@@ -1,3 +1,5 @@
+import { Modal } from "../components/modals/modal"
+
 export const modalListener = () => {
 
     document.addEventListener("click", (event) => {
@@ -10,22 +12,26 @@ export const modalListener = () => {
 
 
         if (classList.contains('transfer-item')) {
-            modal.classList.add('micromodal-slide.is-open', 'transfer')
+            Modal({ type: classList[0] })
+            modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
         if (classList.contains('payment-item')) {
-            modal.classList.add('micromodal-slide.is-open', 'payment')
+            Modal({ type: classList[0] })
+            modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
         if (classList.contains('deposit-item')) {
-            modal.classList.add('micromodal-slide.is-open', 'deposit')
+            Modal({ type: classList[0] })
+            modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
         if (classList.contains('withdrawal-item')) {
-            modal.classList.add('micromodal-slide.is-open', 'withdrawal')
+            Modal({ type: classList[0] })
+            modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
