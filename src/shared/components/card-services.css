@@ -1,6 +1,7 @@
 /* Estilos de la tarjeta */
 .services-card {
     background-color: white;
+    height: 249px;
     border-radius: 25px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
