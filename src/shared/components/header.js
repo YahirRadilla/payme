@@ -45,7 +45,7 @@ export const createHeader = () => {
                         <span> </span>
                     </button>
                     <div class="navbar-right">
-                        <span ></span>
+                        <span id="username">John Doe</span>
                         <label class="popup">
                         <input type="checkbox" />
                         <div tabindex="0" class="burger">
