@@ -79,4 +79,11 @@ export const createHeader = () => {
 
     logoutButton.addEventListener('click', handleLogOutClick);
     userSettingsButton.addEventListener('click', handleConfigClick)
+
+    /* const burgerMenu = document.getElementById('burgerMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    burgerMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active'); 
+    }   ); */
 };

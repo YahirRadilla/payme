@@ -46,3 +46,46 @@
     height: 30px;
     border-radius: 50%;
 }
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .navbar-left {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
