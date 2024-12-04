@@ -2,6 +2,7 @@
 import '../../../../style.css'
 import '../../../shared/components/404.css'
 import '../../../features/page/pages/user-settings.css'
+import '../../../features/page/pages/cards.css'
 import '../../../shared/components/transactions-preview.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
 import { getHome } from '../../../features/page/pages/home.js'

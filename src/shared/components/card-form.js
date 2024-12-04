@@ -4,7 +4,6 @@ export const AddCardForm = () => {
 
     containerForm.innerHTML = `
         <div>
-            <h1 class="card-title">Add Card</h1>
             <div class="card-container">
                 <form>
                     <div class="form-group">
