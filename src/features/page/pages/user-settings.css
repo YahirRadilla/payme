@@ -63,7 +63,7 @@
 .section-buttons button:active {
     background-color: #515DEF;
     color: #FFFFFF;
-    transform: scale(0.98); /* Efecto de compresión */
+    transform: scale(0.98);
 }
 
 .active-section {

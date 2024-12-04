@@ -26,29 +26,40 @@
     gap: 20px;
     list-style: none;
     margin: 0;
-    transition: background-color 0.5s ease, transform 0.4s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    overflow: visible;
 }
 
 .nav-link.active {
     color: #515DEF;
     font-weight: bold;
-    transition: background-color 0.5s ease, transform 0.4s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    transform: scale(1.02);
 }
 
 .nav-link:hover {
     background-color: rgba(81, 93, 239, 0.1);
     border-radius: 12px;
-    transition: background-color 0.5s ease, transform 0.4s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     color: #515DEF;
+    transform: scale(1.02);
+}
+
+.nav-link:active {
+    background-color: #515DEF;
+    color: white;
+    transform: scale(0.95);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 
 .nav-link {
+    display: inline-block;
     text-decoration: none;
     color: black;
     padding: 10px;
     border-radius: 12px;
-    transition: background-color 0.5s ease, transform 0.4s ease;    
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-right {
