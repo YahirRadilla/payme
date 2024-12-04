@@ -1,7 +1,7 @@
-export const transferContent = () => `
+export const serviceContent = () => `
     <header class="modal__header">
                 <h2 class="modal__title">
-                    Transfer data
+                    Service data
                 </h2>
                 <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
     </header>
