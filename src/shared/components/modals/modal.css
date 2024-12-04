@@ -106,16 +106,12 @@
 }
 
 .modal__content {
-    margin-top: 10px;
-    margin-bottom: 10px;
     color: rgba(0, 0, 0, .8);
 }
 
 @supports (display: flex) {
 
     .modal__content {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
         line-height: 1.5;
     }
 
@@ -202,9 +198,6 @@
     cursor: pointer !important;
 }
 
-.modal__container h2.modal__title {
-    color: #595959;
-}
 
 .modal__header {
     display: flex;
@@ -218,8 +211,7 @@
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 1.25;
-    color: #00449e;
-    box-sizing: border-box;
+    color: #121139;
 }
 
 .modal__close {
@@ -227,8 +219,7 @@
 }
 
 .modal__content {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
     line-height: 1.5;
     color: rgba(0, 0, 0, .8);
 }
@@ -285,4 +276,17 @@ button.external {
 
 .other-links a {
     font-size: 12px;
+}
+
+.transfer-inputs select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #666;
+    background-color: #fff;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
 }

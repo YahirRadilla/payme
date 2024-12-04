@@ -9,41 +9,42 @@ import { HandleApi } from '../../../shared/utils/api.js'
 import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
 import { AddCardServices } from '../../../shared/components/card-services.js';
 import { AddTransactionPreview } from '../../../shared/components/transactions-preview.js';
-import { TransferModal } from '../../../shared/components/modals/transfer-modal.js'
+import { Modal } from '../../../shared/components/modals/modal.js'
 
 
 
 
 export const getHome = async () => {
-    TransferModal()
+    Modal()
 
     document.addEventListener("click", (event) => {
         const modal = document.getElementById('modal-1')
-        if (event.target.classList.contains('modal__btn')) {
+        const classList = event.target.classList
+        if (classList.contains('modal__btn') || classList.contains('modal__close')) {
             modal.classList.add('modal-none')
             modal.classList.remove('micromodal-slide.is-open')
-            console.log('first')
         }
 
-        if (event.target.classList.contains('transfer-item')) {
+
+        if (classList.contains('transfer-item')) {
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
             console.log('first')
         }
 
-        if (event.target.classList.contains('payment-item')) {
+        if (classList.contains('payment-item')) {
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
             console.log('first')
         }
 
-        if (event.target.classList.contains('deposit-item')) {
+        if (classList.contains('deposit-item')) {
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
             console.log('first')
         }
 
-        if (event.target.classList.contains('withdrawal-item')) {
+        if (classList.contains('withdrawal-item')) {
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
             console.log('first')
@@ -68,7 +69,7 @@ export const getHome = async () => {
 
 
 
-    Title('Yahir')
+    Title(user[0].first_name + " " + user[0].first_lastname)
     AddCardServices()
 
 
