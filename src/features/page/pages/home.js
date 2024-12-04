@@ -13,12 +13,7 @@ import { Modal } from '../../../shared/components/modals/modal.js'
 import { modalListener } from '../../../shared/utils/modal-listener.js';
 
 
-
 export const getHome = async () => {
-
-
-
-
 
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
@@ -26,9 +21,8 @@ export const getHome = async () => {
     const { data: transactions } = await HandleApi.getTransactions({ id: userId })
     const { data: cards } = await HandleApi.getCards({ id: userId })
     const { data: user } = await HandleApi.getUser({ id: userId })
-
+    localStorage.setItem('userName', user[0].first_name + " " + user[0].first_lastname);
     await modalListener({ cards, user })
-
     Title(user[0].first_name + " " + user[0].first_lastname)
     AddCardServices()
 

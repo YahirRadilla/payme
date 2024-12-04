@@ -72,6 +72,54 @@ const transferFormEventListener = async ({ user }) => {
     })
 }
 
+const serviceFormEventListener = async ({ user }) => {
+    const serviceForm = document.getElementById('service-form')
+    serviceForm.addEventListener('submit', async e => {
+        e.preventDefault()
+
+        const serviceData = Object.fromEntries(
+            new FormData(e.target)
+        )
+        console.log(serviceData)
+        const { data } = await HandleApi.postService({ id: user[0].id, sourceCard: serviceData.service_card_select, serviceName: serviceData.service_select, reference: serviceData.reference, amount: serviceData.amount })
+        console.log(data)
+
+        if (data.status === 200) {
+            notyf.success('The pay of the service has been a success')
+            setTimeout(() => {
+                location.reload()
+            }, 500);
+
+            return
+        }
+
+    })
+}
+
+const withdrawalFormEventListener = async ({ user }) => {
+    const withdrawalForm = document.getElementById('withdrawal-form')
+    withdrawalForm.addEventListener('submit', async e => {
+        e.preventDefault()
+
+        const withdrawalData = Object.fromEntries(
+            new FormData(e.target)
+        )
+        console.log(withdrawalData)
+        const { data } = await HandleApi.postWithdrawal({ id: user[0].id, sourceCard: withdrawalData.withdrawal_card_select, amount: withdrawalData.amount })
+        console.log(data)
+
+        if (data.status === 200) {
+            notyf.success('The withdrawal has been a success')
+            setTimeout(() => {
+                location.reload()
+            }, 500);
+
+            return
+        }
+
+    })
+}
+
 
 
 export const Modal = async ({ type, cards, user }) => {
@@ -87,6 +135,7 @@ export const Modal = async ({ type, cards, user }) => {
             break;
         case 'payment':
             modal.innerHTML = `${serviceContent({ cards })}`
+            await serviceFormEventListener({ user })
             break;
         case 'deposit':
             modal.innerHTML = `${depositContent({ cards })}`
@@ -94,6 +143,7 @@ export const Modal = async ({ type, cards, user }) => {
             break;
         case 'withdrawal':
             modal.innerHTML = `${withdrawalContent({ cards })}`
+            await withdrawalFormEventListener({ user })
             break;
     }
 

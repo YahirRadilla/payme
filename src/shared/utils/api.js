@@ -125,6 +125,29 @@ export class HandleApi {
         }
     }
 
+    static async postWithdrawal({ id, sourceCard, amount }) {
+        try {
+            const response = await fetch(`${API_URL}/withdrawal/create/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ sourceCard, amount }),
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return { data, status: response.status }
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
     static async postTransfer({ id, recipientEmail, sourceCard, amount, message }) {
         try {
             const response = await fetch(`${API_URL}/transfers/create/${id}`, {
@@ -133,6 +156,29 @@ export class HandleApi {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ recipientEmail, sourceCard, amount, message }),
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return { data, status: response.status }
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
+    static async postService({ id, sourceCard, serviceName, reference, amount }) {
+        try {
+            const response = await fetch(`${API_URL}/payments/create/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ sourceCard, serviceName, reference, amount }),
                 mode: 'cors',
                 credentials: 'include'
             })

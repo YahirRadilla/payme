@@ -7,9 +7,9 @@ export const withdrawalContent = ({ cards }) => `
     </header>
     <div class="modal-content-content">
         <div class="modal__content">
-            <form class="transfer-inputs">
-                <label for="withdrawal-card-select" class="name">My Cards</label>
-                <select required name="transfer-card-select">                    
+            <form id="withdrawal-form" class="transfer-inputs">
+                <label for="withdrawal_card_select" class="name">My Cards</label>
+                <select required name="withdrawal_card_select">                    
                     <option disabled>Select a card</option>                
                     ${cards.map(
     (element) =>

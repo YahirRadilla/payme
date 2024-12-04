@@ -19,6 +19,14 @@ const route = (event) => {
     handleLocation();
 };
 
+
+const setName = () => {
+    const userName = localStorage.getItem('userName');
+    console.log(userName)
+    const userNameElement = document.getElementById('username')
+    userNameElement.innerText = userName
+}
+
 const routes = {
     404: "/src/shared/components/404.html",
     "/login": "/src/features/auth/login.html",
@@ -44,11 +52,14 @@ const handleLocation = async () => {
                 createHeader()
                 getHome()
                 createFooter()
+                setName()
                 break
             case '/transactions':
                 createHeader()
+
                 getTransactions()
                 createFooter()
+                setName()
                 break
             case '/register':
                 getAuth()
@@ -60,11 +71,13 @@ const handleLocation = async () => {
                 createHeader()
                 UserSettings()
                 createFooter()
+                setName()
                 break
             case '/cards':
                 createHeader()
                 getCards()
                 createFooter()
+                setName()
                 break
         }
 
