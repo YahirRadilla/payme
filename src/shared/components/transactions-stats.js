@@ -1,6 +1,6 @@
 import "./transactions-stats.css";
 
-export const AddStatsCard = () => {
+export const AddStatsCard = ({ totalTransfers, totalIncomes, totalWithdrawal }) => {
     const containerStats = document.getElementById("stats-card-container");
 
     containerStats.innerHTML = `
@@ -11,8 +11,8 @@ export const AddStatsCard = () => {
                 <img src="transactions-icon.svg" alt="Transactions Icon">
             </div>
             <div class="stat-info">
-                <p class="stat-title">Total Transactions</p>
-                <p class="stat-value">70,000</p>
+                <p class="stat-title">Total Transfer</p>
+                <p class="stat-value">$${totalTransfers}</p>
             </div>
         </div>
         <div class="divider"></div>
@@ -22,7 +22,7 @@ export const AddStatsCard = () => {
             </div>
             <div class="stat-info">
                 <p class="stat-title">Total Income</p>
-                <p class="stat-value">70,000</p>
+                <p class="stat-value">$${totalIncomes}</p>
             </div>
         </div>
         <div class="divider"></div>
@@ -32,7 +32,7 @@ export const AddStatsCard = () => {
             </div>
             <div class="stat-info">
                 <p class="stat-title">Total Expense</p>
-                <p class="stat-value">70,000</p>
+                <p class="stat-value">$${totalWithdrawal}</p>
             </div>
         </div>
     </div>

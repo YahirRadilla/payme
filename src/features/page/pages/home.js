@@ -9,7 +9,6 @@ import { HandleApi } from '../../../shared/utils/api.js'
 import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
 import { AddCardServices } from '../../../shared/components/card-services.js';
 import { AddTransactionPreview } from '../../../shared/components/transactions-preview.js';
-import { Modal } from '../../../shared/components/modals/modal.js'
 import { modalListener } from '../../../shared/utils/modal-listener.js';
 
 

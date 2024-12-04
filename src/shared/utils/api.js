@@ -194,6 +194,63 @@ export class HandleApi {
         }
     }
 
+    static async getTotalTransfers({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/transfers/total/${id}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return data
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
+    static async getTotalIncomes({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/income/total/${id}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return data
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
+    static async getTotalWithdrawal({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/withdrawal/total/${id}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                return data
+            } else {
+                return data
+            }
+        } catch (error) {
+            return error
+        }
+    }
+
     static async getTransactions({ id }) {
         try {
             const response = await fetch(`${API_URL}/transactions/${id}`, {
