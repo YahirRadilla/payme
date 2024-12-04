@@ -7,6 +7,7 @@ export const AddTransactionPreview = ({ description, date, type, amount }) => {
             break;
         case 'payment':
             iconSrc = 'payment-sheet-icon.svg';
+
             break;
         case 'income':
             iconSrc = 'income-icon.svg';

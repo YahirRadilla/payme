@@ -124,6 +124,48 @@ export class HandleApi {
         }
     }
 
+    static async getUser({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/user/${id}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                console.log('User obtenido:', data)
+                return data
+            } else {
+                throw new Error(data.message || 'Error al obtener User')
+            }
+        } catch (error) {
+            console.error('Error al obtener User:', error)
+            throw error
+        }
+    }
+
+    static async getCards({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/cards/${id}`, {
+                method: 'GET',
+                mode: 'cors',
+                credentials: 'include'
+            })
+
+            const data = await response.json()
+            if (response.ok) {
+                console.log('Cartas obtenidas:', data)
+                return data
+            } else {
+                throw new Error(data.message || 'Error al obtener Cartas')
+            }
+        } catch (error) {
+            console.error('Error al obtener Cartas:', error)
+            throw error
+        }
+    }
+
     // Transferencias
     static async getTransfers() {
         try {
@@ -148,6 +190,8 @@ export class HandleApi {
             throw error
         }
     }
+
+
 
     // Pagos
     static async getPayments() {
