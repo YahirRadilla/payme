@@ -27,15 +27,18 @@ export const getHome = async () => {
     AddCardServices()
 
 
-    console.log(user)
+    let countCard = 0;
     cards.forEach(element => {
-        Card({
-            cardNumber: element.card_number,
-            expiredDate: formatToCardExpiration(element.expiration_date),
-            cvv: element.cvv,
-            balance: element.balance,
-            cardName: user[0].first_name
-        })
+        if (countCard < 2) {
+            Card({
+                cardNumber: element.card_number,
+                expiredDate: formatToCardExpiration(element.expiration_date),
+                cvv: element.cvv,
+                balance: element.balance,
+                cardName: user[0].first_name
+            })
+            countCard++
+        }
     });
     if (cards.length === 1) {
         EmptyCard()

@@ -74,8 +74,7 @@ export class HandleApi {
                 return data
             }
         } catch (error) {
-            console.error(error.message)
-            return data
+            return error
         }
     }
 
@@ -99,7 +98,7 @@ export class HandleApi {
                 return data
             }
         } catch (error) {
-            return data
+            return error
         }
     }
 
@@ -113,14 +112,12 @@ export class HandleApi {
 
             const data = await response.json()
             if (response.ok) {
-                console.log('Transacciones obtenidas:', data)
                 return data
             } else {
-                throw new Error(data.message || 'Error al obtener Transacciones')
+                return data
             }
         } catch (error) {
-            console.error('Error al obtener Transacciones:', error)
-            throw error
+            return error
         }
     }
 
@@ -134,14 +131,12 @@ export class HandleApi {
 
             const data = await response.json()
             if (response.ok) {
-                console.log('User obtenido:', data)
                 return data
             } else {
-                throw new Error(data.message || 'Error al obtener User')
+                return data
             }
         } catch (error) {
-            console.error('Error al obtener User:', error)
-            throw error
+            return error
         }
     }
 
