@@ -2,15 +2,58 @@ import '../../../shared/components/card.css'
 import './home.css'
 import { Card } from '../../../shared/components/card.js';
 import { formatToCardExpiration, formatToYearMonthDay } from '../../../shared/utils/helpers/format-date.js';
+import { formatCardNumber } from '../../../shared/utils/helpers/format-card-number.js'
 import { EmptyCard } from '../../../shared/components/empty-card.js';
 import { Title } from '../../../shared/components/title.js';
 import { HandleApi } from '../../../shared/utils/api.js'
 import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
 import { AddCardServices } from '../../../shared/components/card-services.js';
 import { AddTransactionPreview } from '../../../shared/components/transactions-preview.js';
+import { TransferModal } from '../../../shared/components/modals/transfer-modal.js'
+
+
 
 
 export const getHome = async () => {
+    TransferModal()
+
+    document.addEventListener("click", (event) => {
+        const modal = document.getElementById('modal-1')
+        if (event.target.classList.contains('modal__btn')) {
+            modal.classList.add('modal-none')
+            modal.classList.remove('micromodal-slide.is-open')
+            console.log('first')
+        }
+
+        if (event.target.classList.contains('transfer-item')) {
+            modal.classList.add('micromodal-slide.is-open')
+            modal.classList.remove('modal-none')
+            console.log('first')
+        }
+
+        if (event.target.classList.contains('payment-item')) {
+            modal.classList.add('micromodal-slide.is-open')
+            modal.classList.remove('modal-none')
+            console.log('first')
+        }
+
+        if (event.target.classList.contains('deposit-item')) {
+            modal.classList.add('micromodal-slide.is-open')
+            modal.classList.remove('modal-none')
+            console.log('first')
+        }
+
+        if (event.target.classList.contains('withdrawal-item')) {
+            modal.classList.add('micromodal-slide.is-open')
+            modal.classList.remove('modal-none')
+            console.log('first')
+        }
+
+    });
+
+
+
+
 
     const path = window.location.pathname;
     await monitorUserSession()
@@ -23,6 +66,8 @@ export const getHome = async () => {
 
 
 
+
+
     Title('Yahir')
     AddCardServices()
 
@@ -31,7 +76,7 @@ export const getHome = async () => {
     cards.forEach(element => {
         if (countCard < 2) {
             Card({
-                cardNumber: element.card_number,
+                cardNumber: formatCardNumber(element.card_number),
                 expiredDate: formatToCardExpiration(element.expiration_date),
                 cvv: element.cvv,
                 balance: element.balance,

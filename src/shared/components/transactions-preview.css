@@ -21,11 +21,15 @@
 
 .transaction-card {
     display: flex;
-    gap: 10px;
     justify-content: space-between;
-
     padding-bottom: 16px;
     font-weight: bold;
+    font-size: 14px;
+}
+
+.icon-details-container {
+    display: flex;
+    gap: 10px;
 }
 
 
@@ -42,7 +46,6 @@
 
 .transaction-amount {
     display: flex;
-
     align-items: center;
     color: #3FBF73;
 }
@@ -52,10 +55,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 1000px;
-    min-width: 50px;
-    min-height: 50px;
-    width: 50px;
-    height: 50px;
+    min-width: 48px;
+    min-height: 48px;
+    width: 48px;
+    height: 48px;
     overflow: hidden;
 }
 

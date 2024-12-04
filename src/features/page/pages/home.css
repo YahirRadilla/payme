@@ -60,13 +60,13 @@
 }
 
 
+
+
 .right-selection-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
-
-
 }
 
 .right-content-home {
