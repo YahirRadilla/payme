@@ -1,4 +1,4 @@
-export const transferContent = () => `
+export const transferContent = ({ cards }) => `
     <header class="modal__header">
                 <h2 class="modal__title">
                     Transfer data
@@ -10,9 +10,13 @@ export const transferContent = () => `
             <form class="transfer-inputs">
                 <label for="transfer-card-select" class="name">Source Card</label>
                 <select required name="transfer-card-select">                    
-                    <option disabled>Select a type</option>                
-                    <option value="income">Income</option>
-                    <option value="expense">Expense</option>
+                    <option disabled>Select a type</option>       
+                     ${cards.map(
+    (element) =>
+        `<option value="${element.card_number}">Card Number ${element.card_number} - Balance ${element.balance}</option>`
+)
+        .join("")}     
+                
                 </select>  
 
                 <div class="input-container">

@@ -1,8 +1,8 @@
 import { Modal } from "../components/modals/modal"
 
-export const modalListener = () => {
+export const modalListener = async ({ cards, user }) => {
 
-    document.addEventListener("click", (event) => {
+    document.addEventListener("click", async (event) => {
         const modal = document.getElementById('modal-1')
         const classList = event.target.classList
         if (classList.contains('modal__btn') || classList.contains('modal__close')) {
@@ -12,25 +12,25 @@ export const modalListener = () => {
 
 
         if (classList.contains('transfer-item')) {
-            Modal({ type: classList[0] })
+            await Modal({ type: classList[0], cards, user })
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
         if (classList.contains('payment-item')) {
-            Modal({ type: classList[0] })
+            await Modal({ type: classList[0], cards, user })
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
         if (classList.contains('deposit-item')) {
-            Modal({ type: classList[0] })
+            await Modal({ type: classList[0], cards, user })
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }
 
         if (classList.contains('withdrawal-item')) {
-            Modal({ type: classList[0] })
+            await Modal({ type: classList[0], cards, user })
             modal.classList.add('micromodal-slide.is-open')
             modal.classList.remove('modal-none')
         }

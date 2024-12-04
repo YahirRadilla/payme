@@ -1,4 +1,7 @@
-export const depositContent = () => `
+export const depositContent = ({ cards }) => {
+
+
+    return `
     <header class="modal__header">
                 <h2 class="modal__title">
                     Deposit data
@@ -7,22 +10,29 @@ export const depositContent = () => `
     </header>
     <div class="modal-content-content">
         <div class="modal__content">
-            <form class="transfer-inputs">
+            <form id="deposit-form" class="transfer-inputs">
                 <div class="input-container">
                     <label for="deposit-card-select" class="name">Source Card</label>
-                    <select required name="transfer-card-select">                    
+                    <select required name="depositSourceCard">                    
                         <option disabled>Select a card</option>                
-                        <option value="income">1234</option>
-                        <option value="expense">1234</option>
+                        ${cards.map(
+        (element) =>
+            `<option value="${element.card_number}">Card Number ${element.card_number} - Balance ${element.balance}</option>`
+    )
+            .join("")}  
                     </select>  
                 </div>
 
                 <div class="input-container">
                     <label for="deposit-desination-card-select" class="name">Destination Card</label>
-                    <select required name="transfer-card-select">                    
+                    <select required name="depositDestinationCard">                    
                         <option disabled>Select a card</option>                
-                        <option value="income">1234</option>
-                        <option value="expense">1234</option>
+                        ${cards.map(
+                (element) =>
+
+                    `<option value="${element.card_number}">Card Number ${element.card_number} - Balance ${element.balance}</option>`
+            )
+            .join("")}  
                     </select>  
                 </div>
                 
@@ -36,4 +46,4 @@ export const depositContent = () => `
                 <input class="input" type="submit" value="Deposit Founds">
             </form>
         </div>
-    </div>`
+    </div>`}

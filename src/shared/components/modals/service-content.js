@@ -1,4 +1,4 @@
-export const serviceContent = () => `
+export const serviceContent = ({ cards }) => `
 <header class="modal__header">
     <h2 class="modal__title">Payment of services</h2>
     <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
@@ -7,10 +7,14 @@ export const serviceContent = () => `
     <div class="modal__content">
         <form class="transfer-inputs">
             <div class="input-container">
-                <label for="transfer-card-select" class="name">Source Card</label>
-                <select required name="transfer-card-select" id="transfer-card-select">
-                    <option disabled selected>**** 1234</option>
-                    <!-- Agrega más opciones si es necesario -->
+                <label for="service-card-select" class="name">Source Card</label>
+                <select required name="service-card-select" id="transfer-card-select">
+                    <option disabled>Select a card</option>
+                    ${cards.map(
+    (element) =>
+        `<option value="${element.card_number}">Card Number ${element.card_number} - Balance ${element.balance}</option>`
+)
+        .join("")}  
                 </select>
             </div>
 

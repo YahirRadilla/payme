@@ -1,4 +1,4 @@
-export const withdrawalContent = () => `
+export const withdrawalContent = ({ cards }) => `
     <header class="modal__header">
                 <h2 class="modal__title">
                     Withdrawal data
@@ -11,8 +11,11 @@ export const withdrawalContent = () => `
                 <label for="withdrawal-card-select" class="name">My Cards</label>
                 <select required name="transfer-card-select">                    
                     <option disabled>Select a card</option>                
-                    <option value="income">1234</option>
-                    <option value="expense">1234</option>
+                    ${cards.map(
+    (element) =>
+        `<option value="${element.card_number}">Card Number ${element.card_number} - Balance ${element.balance}</option>`
+)
+        .join("")}  
                 </select>  
 
                 <div class="input-container">

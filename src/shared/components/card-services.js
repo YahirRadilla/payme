@@ -16,7 +16,7 @@ export const AddCardServices = () => {
                 </button>
                 <button class="deposit service-item deposit-item">
                     <span class="deposit icon deposit-item"></span>
-                    <span class="deposittext deposit-item">Deposit</span>
+                    <span class="deposit text deposit-item">Deposit</span>
                 </button>
                 <button class="withdrawal service-item withdrawal-item">
                     <span class="withdrawal icon withdrawal-item"></span>

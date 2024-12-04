@@ -18,7 +18,7 @@ export const getHome = async () => {
 
 
 
-    modalListener()
+
 
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
@@ -27,7 +27,7 @@ export const getHome = async () => {
     const { data: cards } = await HandleApi.getCards({ id: userId })
     const { data: user } = await HandleApi.getUser({ id: userId })
 
-
+    await modalListener({ cards, user })
 
     Title(user[0].first_name + " " + user[0].first_lastname)
     AddCardServices()
@@ -53,7 +53,6 @@ export const getHome = async () => {
 
     transactions.forEach(element => {
         const description = element.message.length === 0 ? element.type : element.message
-        console.log(description)
         AddTransactionPreview({
             description: description,
             date: formatToYearMonthDay(element.created_at),
@@ -61,6 +60,9 @@ export const getHome = async () => {
             amount: element.amount
         })
     });
+
+
+
 
 
 }
