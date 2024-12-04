@@ -8,17 +8,12 @@ export const withdrawalContent = () => `
     <div class="modal-content-content">
         <div class="modal__content">
             <form class="transfer-inputs">
-                <label for="transfer-card-select" class="name">Source Card</label>
+                <label for="withdrawal-card-select" class="name">My Cards</label>
                 <select required name="transfer-card-select">                    
-                    <option disabled>Select a type</option>                
-                    <option value="income">Income</option>
-                    <option value="expense">Expense</option>
+                    <option disabled>Select a card</option>                
+                    <option value="income">1234</option>
+                    <option value="expense">1234</option>
                 </select>  
-
-                <div class="input-container">
-                    <label for="email" class="name">E-Mail</label>
-                    <input required id="email" name="email" placeholder="Enter your email" type="email" class="input">
-                </div>
 
                 <div class="input-container">
                     <label for="amount" class="name">Amount</label>
@@ -26,12 +21,7 @@ export const withdrawalContent = () => `
                         class="input">
                 </div>
 
-                <div class="input-container">
-                    <label for="message" class="name">Message (Optional)</label>
-                    <input id="message" name="message" placeholder="Your message here" type="text" class="input">
-                </div>
-
-                <input class="input" type="submit" value="Make transfer">
+                <input class="input" type="submit" value="Make Withdrawal">
             </form>
         </div>
     </div>`
