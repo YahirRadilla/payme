@@ -25,13 +25,30 @@
     display: flex;
     gap: 20px;
     list-style: none;
-    padding: 0;
     margin: 0;
+    transition: background-color 0.5s ease, transform 0.4s ease;
 }
+
+.nav-link.active {
+    color: #515DEF;
+    font-weight: bold;
+    transition: background-color 0.5s ease, transform 0.4s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(81, 93, 239, 0.1);
+    border-radius: 12px;
+    transition: background-color 0.5s ease, transform 0.4s ease;
+    color: #515DEF;
+}
+
 
 .nav-link {
     text-decoration: none;
     color: black;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, transform 0.4s ease;    
 }
 
 .navbar-right {
@@ -145,12 +162,29 @@
 
 @media (max-width: 694px) {
     .navbar-left {
-        display: none;
+        display: none; 
     }
 
     .burger-menu {
-        display: flex;
+        display: flex; 
+    }
+
+    .side-menu {
+        left: -300px; 
+    }
+
+    .side-menu.active {
+        left: 0;
+    }
+
+    .side-menu a, .side-menu button {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .logo {
+        width: 80px;
+        margin-right: 10px;
     }
 }
-
 

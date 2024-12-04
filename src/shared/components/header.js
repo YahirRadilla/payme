@@ -34,9 +34,9 @@ export const createHeader = () => {
                     <div class="navbar-left">
                         <img src="logo.svg" alt="Logo" class="logo">
                         <ul class="nav-links">
-                            <li><a href="/" class="nav-link">Home</a></li>
-                            <li><a href="/transactions" class="nav-link">Transactions</a></li>
-                            <li><a href="/cards" class="nav-link">Cards</a></li>
+                            <li><a href="/" class="nav-link" id="homeLink">Home</a></li>
+                            <li><a href="/transactions" class="nav-link" id="transactionsLink">Transactions</a></li>
+                            <li><a href="/cards" class="nav-link" id="cardsLink">Cards</a></li>
                         </ul>
                     </div>
                     <button class="burger-menu" id="burgerMenu">
@@ -62,7 +62,6 @@ export const createHeader = () => {
                             </svg>
                         </div>
                         <nav class="popup-window">
-                            
                             <ul>
                             <li>
                                 <button id="userSettingsButton">Settings</button>
@@ -81,9 +80,9 @@ export const createHeader = () => {
             <div class="sideMenu-elements">
                 <button id="closeSideMenu" class="close-menu-button">X</button>
                 <ul>
-                    <li><a href="/" class="nav-link">Home</a></li>
-                    <li><a href="/transactions" class="nav-link">Transactions</a></li>
-                    <li><a href="/cards" class="nav-link">Cards</a></li>
+                    <li><a href="/" class="nav-link" id="sideHomeLink">Home</a></li>
+                    <li><a href="/transactions" class="nav-link" id="sideTransactionsLink">Transactions</a></li>
+                    <li><a href="/cards" class="nav-link" id="sideCardsLink">Cards</a></li>
                 </ul>
             </div>
             <img src="logo.svg" alt="Logo" class="logo">
@@ -99,6 +98,25 @@ export const createHeader = () => {
 
     logoutButton.addEventListener('click', handleLogOutClick);
     userSettingsButton.addEventListener('click', handleConfigClick)
+
+
+
+    const currentPath = window.location.pathname;
+    if (currentPath === '/') {
+        document.getElementById('homeLink').classList.add('active');
+    } else if(currentPath === '/transactions') {
+        document.getElementById('transactionsLink').classList.add('active');
+    } else if(currentPath === '/cards') {
+        document.getElementById('cardsLink').classList.add('active');
+    }
+
+    if (currentPath === '/') {
+        document.getElementById('sideHomeLink').classList.add('active');
+    } else if(currentPath === '/transactions') {
+        document.getElementById('sideTransactionsLink').classList.add('active');
+    } else if(currentPath === '/cards') {
+        document.getElementById('sideCardsLink').classList.add('active');
+    }
 
     burgerMenu.addEventListener('click', () => {
         sideMenu.classList.toggle('active');
