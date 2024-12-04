@@ -45,7 +45,7 @@ export const getHome = async () => {
 
 
     transactions.forEach(element => {
-        const description = element.message.length === 0 ? element.type : element.message
+        const description = element.message.length === 0 ? 'Sin descripción' : element.message
         AddTransactionPreview({
             description: description,
             date: formatToYearMonthDay(element.created_at),
