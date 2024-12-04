@@ -78,13 +78,14 @@ export const createHeader = () => {
         </header>
         <aside class="side-menu" id="sideMenu">
             <div class="sideMenu-elements">
+                <button id="closeSideMenu" class="close-menu-button">X</button>
                 <ul>
                     <li><a href="/" class="nav-link">Home</a></li>
                     <li><a href="/transactions" class="nav-link">Transactions</a></li>
                     <li><a href="/cards" class="nav-link">Cards</a></li>
                 </ul>
-                <img src="logo.svg" alt="Logo" class="logo">
             </div>
+            <img src="logo.svg" alt="Logo" class="logo">
         </aside>
     `;
 
@@ -93,6 +94,7 @@ export const createHeader = () => {
 
     const burgerMenu = document.getElementById('burgerMenu');
     const sideMenu = document.getElementById('sideMenu');
+    const closeSideMenu = document.getElementById('closeSideMenu');
 
     logoutButton.addEventListener('click', handleLogOutClick);
     userSettingsButton.addEventListener('click', handleConfigClick)
@@ -104,7 +106,7 @@ export const createHeader = () => {
     });
 
     const outsideClose = (event) => {
-        if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
+        if (!sideMenu.contains(event.target) && !burgerMenu.contains(event.target) || closeSideMenu.contains(event.target)) {
             sideMenu.classList.remove('active');
             window.removeEventListener('mousedown', outsideClose);
         }
