@@ -4,6 +4,10 @@
     font-weight: bold;
 }
 
+.form-style{
+    height: 100%;
+}
+
 @media (width < 960px) {
     .titles-content{
         font-size: 1.2em;

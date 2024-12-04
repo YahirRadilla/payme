@@ -4,7 +4,7 @@ export const ChangePassword = () => {
 
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = `
-    <form id="form" action="">
+    <form id="form" class="form-style" action="">
         <div class="container-forms">
             <div class="container-elements">
                 <label class="titles-content">Change Password</label>
