@@ -27,7 +27,7 @@
     --nav-default-scale: 0.8;
     --nav-active-scale: 1;
     --nav-position-left: 0;
-    --nav-position-right: u nset;
+    --nav-position-right: 7;
     /* if you want to change sides just switch one property */
     /* from properties to "unset" and the other to 0 */
     /* title */
@@ -91,8 +91,8 @@
     box-shadow: var(--nav-shadow-width) var(--nav-shadow-color);
     border: var(--nav-border-width) solid var(--nav-border-color);
     top: calc(var(--burger-diameter) + var(--burger-enable-outline-width) + var(--burger-enable-outline-offset));
-    left: var(--nav-position-left);
-    right: var(--nav-position-right);
+    right: 7px;
+    z-index: 9999;
     transition: var(--burger-transition);
     margin-top: 10px;
 }

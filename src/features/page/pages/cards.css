@@ -3,6 +3,7 @@
     max-width: 70%;
     margin: auto;
 }
+
 #card-container {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -25,8 +26,16 @@
     border-radius: 10px;
 }
 
-@media (width < 600px){
-    #main-container{
+@media (width < 600px) {
+    #main-container {
         max-width: 90%;
+    }
+}
+
+
+@media (width < 600px) {
+    #card-form-services-container {
+        display: block;
+
     }
 }
