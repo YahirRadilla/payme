@@ -197,5 +197,11 @@
         width: 80px;
         margin-right: 10px;
     }
+
 }
 
+@media (width < 600px){
+    .container {
+        max-width: 100%;
+    }
+}
