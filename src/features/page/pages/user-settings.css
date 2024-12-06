@@ -79,6 +79,9 @@
     #user-settings h1 {
         font-size: 1.5em;
     }
+    #main-section {
+        height: 500px;
+    }
 }
 
 @media (width < 694px) {
@@ -103,4 +106,5 @@
         border-bottom: 4px solid #515DEF;
         border-left: none;
     }
+    
 }
