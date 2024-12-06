@@ -88,4 +88,20 @@
         grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
         ;
     }
+    .right-content-home{
+        max-height: 55vh;
+    }
+
+    #card-container{
+        padding-top: 6px;
+    }
+
+    .cards-content {
+        margin-bottom: 0px;
+    }
+}
+@media (width < 600px) {
+    .home-main {
+        max-width: 90%;
+    }
 }

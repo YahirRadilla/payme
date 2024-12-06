@@ -80,3 +80,10 @@
 .service-item:last-child {
     margin-bottom: 0;
 }
+
+
+@media (width < 600px){
+    .services-card{
+        max-width: 100%;
+    }
+}

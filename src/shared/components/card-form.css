@@ -64,3 +64,9 @@
 .btn:hover {
     background-color: #515DEF;
 }
+
+@media (width < 600px){
+    .card-container {
+        width: 100%;
+    }
+}
