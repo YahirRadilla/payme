@@ -2,6 +2,8 @@
 
 const API_URL = import.meta.env.API_URL || 'http://localhost:3003'
 
+
+
 export class HandleApi {
     // Login
     static async login({ email, password }) {
@@ -221,6 +223,9 @@ export class HandleApi {
         try {
             const response = await fetch(`${API_URL}/transfers/total/${id}`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
@@ -240,6 +245,9 @@ export class HandleApi {
         try {
             const response = await fetch(`${API_URL}/income/total/${id}`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
@@ -259,6 +267,9 @@ export class HandleApi {
         try {
             const response = await fetch(`${API_URL}/withdrawal/total/${id}`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
@@ -278,6 +289,9 @@ export class HandleApi {
         try {
             const response = await fetch(`${API_URL}/transactions/${id}`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
@@ -297,6 +311,9 @@ export class HandleApi {
         try {
             const response = await fetch(`${API_URL}/user/${id}`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
@@ -316,6 +333,9 @@ export class HandleApi {
         try {
             const response = await fetch(`${API_URL}/cards/${id}`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 mode: 'cors',
                 credentials: 'include'
             })
@@ -335,7 +355,7 @@ export class HandleApi {
 
 
     // Filtrar transacciones por fecha
-    static async filterByDate({ dateTransaction }) {
+    /* static async filterByDate({ dateTransaction }) {
         try {
             const response = await fetch(`${API_URL}/filterDate`, {
                 method: 'POST',
@@ -357,5 +377,5 @@ export class HandleApi {
             console.error('Error al filtrar por fecha:', error)
             throw error
         }
-    }
+    } */
 }
