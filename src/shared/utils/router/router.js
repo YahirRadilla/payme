@@ -1,17 +1,15 @@
 
 import '../../../../style.css'
-import '../../../shared/components/404.css'
-import '../../../features/page/pages/user-settings.css'
-import '../../../features/page/pages/cards.css'
-import '../../../shared/components/transactions-preview.css'
+import '../../../shared/components/404/404.css'
+import '../../../features/page/pages/profile/user-settings.css'
+import '../../../features/page/pages/cards/cards.css'
 import { getAuth } from '../../../features/auth/getAuth.js'
-import { getHome } from '../../../features/page/pages/home.js'
-import { getCards } from '../../../features/page/pages/cards.js'
-import { HandleApi } from '../api.js'
-import { createHeader } from '../../components/header.js'
-import { createFooter } from '../../components/footer.js'
-import { UserSettings } from '../../../features/page/pages/user-settings.js'
-import { getTransactions } from '../../../features/page/pages/transactions.js'
+import { getHome } from '../../../features/page/pages/home/home.js'
+import { getCards } from '../../../features/page/pages/cards/cards.js'
+import { createHeader } from '../../components/header/header.js'
+import { createFooter } from '../../components/footer/footer.js'
+import { UserSettings } from '../../../features/page/pages/profile/user-settings.js'
+import { getTransactions } from '../../../features/page/pages/transactions/transactions.js'
 
 const route = (event) => {
     event = event;
@@ -29,13 +27,13 @@ const setName = () => {
 }
 
 const routes = {
-    404: "/src/shared/components/404.html",
-    "/login": "/src/features/auth/login.html",
-    "/register": "/src/features/auth/register.html",
-    "/": "/src/features/page/pages/home.html",
-    "/transactions": "/src/features/page/pages/transactions.html",
-    "/user-settings": "/src/features/page/pages/user-settings.html",
-    "/cards": "/src/features/page/pages/cards.html"
+    404: "/src/shared/components/404/404.html",
+    "/login": "/src/features/auth/login/login.html",
+    "/register": "/src/features/auth/register/register.html",
+    "/": "/src/features/page/pages/home/home.html",
+    "/transactions": "/src/features/page/pages/transactions/transactions.html",
+    "/user-settings": "/src/features/page/pages/profile/user-settings.html",
+    "/cards": "/src/features/page/pages/cards/cards.html"
 };
 
 const handleLocation = async () => {

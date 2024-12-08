@@ -1,4 +1,4 @@
-import '../edit-profile.css'
+import './edit-profile.css'
 
 export const EditProfile = () => {
 

@@ -1,15 +1,15 @@
-import '../../../shared/components/card.css'
+import '../../../../shared/components/cards/card.css'
 import './home.css'
-import { Card } from '../../../shared/components/card.js';
-import { formatToCardExpiration, formatToYearMonthDay } from '../../../shared/utils/helpers/format-date.js';
-import { formatCardNumber } from '../../../shared/utils/helpers/format-card-number.js'
-import { EmptyCard } from '../../../shared/components/empty-card.js';
-import { Title } from '../../../shared/components/title.js';
-import { HandleApi } from '../../../shared/utils/api.js'
-import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
-import { AddCardServices } from '../../../shared/components/card-services.js';
-import { AddTransactionPreview } from '../../../shared/components/transactions-preview.js';
-import { modalListener } from '../../../shared/utils/modal-listener.js';
+import { Card } from '../../../../shared/components/cards/card.js';
+import { formatToCardExpiration, formatToYearMonthDay } from '../../../../shared/utils/helpers/format-date.js';
+import { formatCardNumber } from '../../../../shared/utils/helpers/format-card-number.js'
+import { EmptyCard } from '../../../../shared/components/cards/empty-card.js';
+import { Title } from '../../../../shared/components/title.js';
+import { HandleApi } from '../../../../shared/utils/api.js'
+import { monitorUserSession } from '../../../../shared/utils/helpers/verify-token.js'
+import { AddCardServices } from '../../../../shared/components/services/card-services.js';
+import { AddTransactionPreview } from '../../../../shared/components/transactions/transactions-preview.js';
+import { modalListener } from '../../../../shared/utils/modal-listener.js';
 
 
 export const getHome = async () => {

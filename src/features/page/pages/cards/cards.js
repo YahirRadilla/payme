@@ -1,14 +1,14 @@
-import '../../../shared/components/card.css'
-import { Card } from '../../../shared/components/card.js';
-import { AddCardForm } from '../../../shared/components/card-form.js';
-import { AddCardServices } from '../../../shared/components/card-services.js';
-import { EmptyCard } from '../../../shared/components/empty-card.js';
-import { HandleApi } from '../../../shared/utils/api.js'
-import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
-import { formatToCardExpiration, formatToYearMonthDay } from '../../../shared/utils/helpers/format-date.js';
-import { formatCardNumber } from '../../../shared/utils/helpers/format-card-number.js'
-import { modalListener } from '../../../shared/utils/modal-listener.js';
-import { notyf } from '../../../shared/components/toast.js';
+import '../../../../shared/components/cards/card.css'
+import { Card } from '../../../../shared/components/cards/card.js';
+import { AddCardForm } from './card-form.js';
+import { AddCardServices } from '../../../../shared/components/services/card-services.js';
+import { EmptyCard } from '../../../../shared/components/cards/empty-card.js';
+import { HandleApi } from '../../../../shared/utils/api.js'
+import { monitorUserSession } from '../../../../shared/utils/helpers/verify-token.js'
+import { formatToCardExpiration, formatToYearMonthDay } from '../../../../shared/utils/helpers/format-date.js';
+import { formatCardNumber } from '../../../../shared/utils/helpers/format-card-number.js'
+import { modalListener } from '../../../../shared/utils/modal-listener.js';
+import { notyf } from '../../../../shared/components/toast.js';
 
 
 
@@ -54,9 +54,8 @@ export const getCards = async () => {
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
     const userId = atob(encodedId);
-    const dataUser = await HandleApi.getUser({ id: userId })
+    const { data: user } = await HandleApi.getUser({ id: userId })
     const dataCards = await HandleApi.getCards({ id: userId })
-    const user = dataUser.data[0]
     const cards = dataCards.data
 
     await modalListener({ cards, user })

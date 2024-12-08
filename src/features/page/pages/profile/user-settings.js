@@ -1,6 +1,6 @@
-import { EditProfile } from "./components/edit-profile.js";
-import { ChangePassword } from "./components/change-password.js";
-import { DeleteAccount } from "./components/delete-account.js";
+import { EditProfile } from "../components/edit-profile.js";
+import { ChangePassword } from "../components/change-password.js";
+import { DeleteAccount } from "../components/delete-account.js";
 
 export const UserSettings = () => {
     const editButton = document.getElementById("show-edit-profile");
@@ -10,7 +10,7 @@ export const UserSettings = () => {
     editButton.classList.add("active-section");
     editButton.style.color = "#515DEF";
     EditProfile();
-    
+
     document.addEventListener("click", (event) => {
         if (!event.target.classList.contains("buttons-sections")) return;
         [editButton, changeButton, deleteButton].forEach(button => {

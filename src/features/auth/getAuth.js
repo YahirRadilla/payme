@@ -1,25 +1,15 @@
-import { Notyf } from 'notyf'
-import 'notyf/notyf.min.css';
-import { getLogged } from './login';
-import { getRegistered } from './register';
+import { notyf } from '../../shared/components/toast.js'
+import { getLogged } from './login/login.js';
+import { getRegistered } from './register/register.js';
 import { HandleApi } from '../../shared/utils/api'
-import '../../features/auth/register.css'
-import '../../features/auth/login.css'
+import '../../features/auth/register/register.css'
+import '../../features/auth/login/login.css'
 
-
-const notyf = new Notyf({
-    position: {
-        x: 'right',
-        y: 'top',
-    },
-    dismissible: true,
-
-
-});
 const path = window.location.pathname;
 
-const validateForm = (data) => {
 
+
+const validateForm = (data) => {
 
     if (path === '/register') {
         console.log(data.data)
@@ -32,7 +22,6 @@ const validateForm = (data) => {
             return false
         }
 
-
         return true
     }
     return true
@@ -40,6 +29,8 @@ const validateForm = (data) => {
 
 
 const isLogged = async () => {
+
+
     const verifyToken = await HandleApi.verifyToken()
 
     console.log(verifyToken)
@@ -51,7 +42,6 @@ const isLogged = async () => {
 export const getAuth = async () => {
 
     await isLogged()
-
 
     const form = document.getElementById('form')
     form.addEventListener('submit', async e => {

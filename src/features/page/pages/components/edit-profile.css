@@ -4,24 +4,26 @@
     font-weight: bold;
 }
 
-.form-style{
+.form-style {
     height: 100%;
 }
 
 @media (width < 960px) {
-    .titles-content{
+    .titles-content {
         font-size: 1.2em;
     }
 }
 
 @media (width < 660px) {
 
-    .titles-content{
+    .titles-content {
         font-size: 1.2em;
     }
+
     .input-container {
         margin: 20px 0px;
     }
+
     .inline-inputs {
         display: block;
         gap: 0px;

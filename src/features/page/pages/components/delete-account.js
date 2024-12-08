@@ -1,4 +1,4 @@
-import '../delete-account.css';
+import './delete-account.css';
 
 export const DeleteAccount = () => {
 

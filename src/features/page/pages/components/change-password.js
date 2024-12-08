@@ -1,4 +1,4 @@
-import '../change-password.css';
+import './change-password.css';
 
 export const ChangePassword = () => {
 

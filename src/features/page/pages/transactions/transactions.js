@@ -1,12 +1,9 @@
-import '../../../shared/components/transactions-stats.css'
-import '../../../shared/components/transactions-table.css'
-import '../../../shared/components/transactions-filter.css'
 import './transactions.css'
-import { AddStatsCard } from '../../../shared/components/transactions-stats.js'
-import { monitorUserSession } from '../../../shared/utils/helpers/verify-token.js'
-import { AddTransactions } from '../../../shared/components/transactions-table.js';
-import { AddFilters } from '../../../shared/components/transactions-filter.js';
-import { HandleApi } from '../../../shared/utils/api.js'
+import { AddStatsCard } from '../../../../shared/components/transactions/transactions-stats.js'
+import { monitorUserSession } from '../../../../shared/utils/helpers/verify-token.js'
+import { AddTransactions } from '../../../../shared/components/transactions/transactions-table.js';
+import { AddFilters } from '../../../../shared/components/transactions/transactions-filter.js';
+import { HandleApi } from '../../../../shared/utils/api.js'
 
 export const getTransactions = async () => {
 

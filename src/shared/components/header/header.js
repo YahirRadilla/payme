@@ -1,7 +1,7 @@
 import './header.css'
 import './user-dropdown.css'
-import { HandleApi } from '../utils/api'
-import { notyf } from '../../shared/components/toast.js'
+import { HandleApi } from '../../utils/api.js'
+import { notyf } from '../toast.js'
 
 
 const handleLogOutClick = async () => {

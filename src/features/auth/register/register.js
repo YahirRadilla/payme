@@ -1,6 +1,5 @@
-import { notyf } from '../../shared/components/toast.js'
-import 'notyf/notyf.min.css';
-import { HandleApi } from '../../shared/utils/api'
+import { notyf } from '../../../shared/components/toast.js'
+import { HandleApi } from '../../../shared/utils/api.js'
 
 
 export async function getRegistered(data) {

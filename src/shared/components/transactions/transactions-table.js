@@ -1,5 +1,5 @@
 import "./transactions-table.css";
-import { formatToYearMonthDay } from '../utils/helpers/format-date'
+import { formatToYearMonthDay } from '../../utils/helpers/format-date'
 
 export const AddTransactions = ({ transactions }) => {
     const containerTransactions = document.getElementById("transactions-container");
