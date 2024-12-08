@@ -6,7 +6,6 @@ import { notyf } from '../toast.js'
 
 const handleLogOutClick = async () => {
     localStorage.removeItem('userId');
-    localStorage.removeItem('userName');
     const data = await HandleApi.logout()
     notyf.success(data.message)
     window.location.href = `/login`
@@ -38,7 +37,7 @@ export const createHeader = () => {
                         <span> </span>
                     </button>
                     <div class="navbar-right">
-                        <span id="username">John Doe</span>
+                        <span id="username"></span>
                         <label class="popup">
                         <input type="checkbox" />
                         <div tabindex="0" class="burger">

@@ -10,6 +10,7 @@ import { createHeader } from '../../components/header/header.js'
 import { createFooter } from '../../components/footer/footer.js'
 import { UserSettings } from '../../../features/page/pages/profile/user-settings.js'
 import { getTransactions } from '../../../features/page/pages/transactions/transactions.js'
+import { HandleApi } from '../api.js'
 
 const route = (event) => {
     event = event;
@@ -19,12 +20,7 @@ const route = (event) => {
 };
 
 
-const setName = () => {
-    const userName = localStorage.getItem('userName');
-    console.log(userName)
-    const userNameElement = document.getElementById('username')
-    userNameElement.innerText = userName
-}
+
 
 const routes = {
     404: "/src/shared/components/404/404.html",
@@ -48,17 +44,15 @@ const handleLocation = async () => {
 
         switch (path) {
             case '/':
-                createHeader()
                 getHome()
+                createHeader()
                 createFooter()
-                setName()
                 break
             case '/transactions':
                 createHeader()
 
                 getTransactions()
                 createFooter()
-                setName()
                 break
             case '/register':
                 getAuth()
@@ -70,17 +64,19 @@ const handleLocation = async () => {
                 createHeader()
                 UserSettings()
                 createFooter()
-                setName()
                 break
             case '/cards':
                 createHeader()
                 getCards()
                 createFooter()
-                setName()
                 break
+
         }
-
-
+        const encodedId = localStorage.getItem('userId');
+        const userId = atob(encodedId);
+        const { data: user } = await HandleApi.getUser({ id: userId })
+        const userNameElement = document.getElementById('username')
+        userNameElement.innerText = user[0].first_name + " " + user[0].first_lastname
 
     } catch (error) {
         console.error("Error loading route:", error);

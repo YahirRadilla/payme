@@ -33,8 +33,8 @@ const cardFormEventListener = async ({ user }) => {
         }
 
 
-
-        const data = await HandleApi.postCard({ id: user.id, cardNumber: cardData.card_number, expirationDate: cardData.expiry_date, cvv: cardData.cvv, balance: cardData.balance })
+        console.log(user)
+        const data = await HandleApi.postCard({ id: user[0].id, cardNumber: cardData.card_number, expirationDate: cardData.expiry_date, cvv: cardData.cvv, balance: cardData.balance })
 
 
         if (data.success) {

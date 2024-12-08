@@ -14,7 +14,7 @@ export const getTransactions = async () => {
     const { data: totalIncomes } = await HandleApi.getTotalIncomes({ id: userId })
     const { data: totalWithdrawal } = await HandleApi.getTotalWithdrawal({ id: userId })
     const { data: transactions } = await HandleApi.getTransactions({ id: userId })
-    console.log(transactions)
+
 
     AddStatsCard({ totalTransfers: totalTransfers.totalTransfers, totalIncomes: totalIncomes.totalIncomes, totalWithdrawal: totalWithdrawal.totalWithdrawal });
     AddTransactions({ transactions });
