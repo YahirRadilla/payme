@@ -10,8 +10,8 @@ export const transferContent = ({ cards }) => `
             <form id="transfer-form" class="transfer-inputs">
                 <label for="transfer_card_select" class="name">Source Card</label>
                 <select required name="transfer_card_select">                    
-                    <option disabled>Select a type</option>       
-                     ${cards.map(
+                    <option disabled>Select a card</option>       
+                    ${cards.map(
     (element) =>
         `<option value="${element.card_number}">Card Number ${element.card_number} - Balance ${element.balance}</option>`
 )

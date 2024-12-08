@@ -34,17 +34,17 @@ const cardFormEventListener = async ({ user }) => {
 
 
 
-        const { data } = await HandleApi.postCard({ id: user[0].id, cardNumber: cardData.card_number, expirationDate: cardData.expiry_date, cvv: cardData.cvv, balance: cardData.balance })
+        const data = await HandleApi.postCard({ id: user.id, cardNumber: cardData.card_number, expirationDate: cardData.expiry_date, cvv: cardData.cvv, balance: cardData.balance })
 
 
-        if (data.status === 200) {
-            notyf.success('The card has been created')
+        if (data.success) {
+            notyf.success(data.message)
             setTimeout(() => {
                 location.reload()
             }, 500);
-
             return
         }
+        notyf.error(data.message)
 
     })
 }
@@ -54,8 +54,10 @@ export const getCards = async () => {
     await monitorUserSession()
     const encodedId = localStorage.getItem('userId');
     const userId = atob(encodedId);
-    const { data: user } = await HandleApi.getUser({ id: userId })
-    const { data: cards } = await HandleApi.getCards({ id: userId })
+    const dataUser = await HandleApi.getUser({ id: userId })
+    const dataCards = await HandleApi.getCards({ id: userId })
+    const user = dataUser.data[0]
+    const cards = dataCards.data
 
     await modalListener({ cards, user })
 
@@ -69,7 +71,7 @@ export const getCards = async () => {
             expiredDate: formatToCardExpiration(element.expiration_date),
             cvv: element.cvv,
             balance: element.balance,
-            cardName: user[0].first_name
+            cardName: user.first_name
         })
 
 

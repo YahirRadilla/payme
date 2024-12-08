@@ -3,19 +3,9 @@ import { transferContent } from './transfer-content'
 import { withdrawalContent } from './withdrawal-content'
 import { serviceContent } from './service-content'
 import { depositContent } from './deposit-content'
-import { Notyf } from 'notyf'
+import { notyf } from '../toast.js'
 import { HandleApi } from '../../utils/api'
 
-
-const notyf = new Notyf({
-    position: {
-        x: 'right',
-        y: 'top',
-    },
-    dismissible: true,
-
-
-});
 
 const depositFormEventListener = async ({ user }) => {
     const depositForm = document.getElementById('deposit-form')
@@ -26,24 +16,26 @@ const depositFormEventListener = async ({ user }) => {
             new FormData(e.target)
         )
 
-
+        if (!depositData.depositSourceCard || !depositData.depositDestinationCard) {
+            notyf.error('Select a card')
+            return
+        }
 
         if (depositData.depositSourceCard === depositData.depositDestinationCard) {
             notyf.error('You can not deposit to the same card')
             return
         }
 
-        const { data } = await HandleApi.postDeposit({ id: user[0].id, sourceCard: depositData.depositSourceCard, destinationCard: depositData.depositDestinationCard, amount: depositData.amount })
-        console.log(data)
+        const data = await HandleApi.postDeposit({ id: user[0].id, sourceCard: depositData.depositSourceCard, destinationCard: depositData.depositDestinationCard, amount: depositData.amount })
 
-        if (data.status === 200) {
-            notyf.success('The deposit has been a success')
+        if (data.success) {
+            notyf.success(data.message)
             setTimeout(() => {
                 location.reload()
             }, 500);
-
             return
         }
+        notyf.error(data.message)
 
     })
 }
@@ -57,17 +49,22 @@ const transferFormEventListener = async ({ user }) => {
             new FormData(e.target)
         )
 
-        const { data } = await HandleApi.postTransfer({ id: user[0].id, recipientEmail: transferData.email, sourceCard: transferData.transfer_card_select, amount: transferData.amount, message: transferData.message })
-        console.log(data)
+        if (!transferData.transfer_card_select) {
+            notyf.error('Select a card')
+            return
+        }
 
-        if (data.status === 200) {
-            notyf.success('The transfer has been a success')
+        const data = await HandleApi.postTransfer({ id: user[0].id, recipientEmail: transferData.email, sourceCard: transferData.transfer_card_select, amount: transferData.amount, message: transferData.message })
+
+
+        if (data.success) {
+            notyf.success(data.message)
             setTimeout(() => {
                 location.reload()
             }, 500);
-
             return
         }
+        notyf.error(data.message)
 
     })
 }
@@ -80,18 +77,23 @@ const serviceFormEventListener = async ({ user }) => {
         const serviceData = Object.fromEntries(
             new FormData(e.target)
         )
-        console.log(serviceData)
-        const { data } = await HandleApi.postService({ id: user[0].id, sourceCard: serviceData.service_card_select, serviceName: serviceData.service_select, reference: serviceData.reference, amount: serviceData.amount })
-        console.log(data)
 
-        if (data.status === 200) {
-            notyf.success('The pay of the service has been a success')
+        if (!serviceData.service_card_select) {
+            notyf.error('Select a card')
+            return
+        }
+
+        const data = await HandleApi.postService({ id: user[0].id, sourceCard: serviceData.service_card_select, serviceName: serviceData.service_select, reference: serviceData.reference, amount: serviceData.amount })
+
+
+        if (data.success) {
+            notyf.success(data.message)
             setTimeout(() => {
                 location.reload()
             }, 500);
-
             return
         }
+        notyf.error(data.message)
 
     })
 }
@@ -104,18 +106,25 @@ const withdrawalFormEventListener = async ({ user }) => {
         const withdrawalData = Object.fromEntries(
             new FormData(e.target)
         )
-        console.log(withdrawalData)
-        const { data } = await HandleApi.postWithdrawal({ id: user[0].id, sourceCard: withdrawalData.withdrawal_card_select, amount: withdrawalData.amount })
-        console.log(data)
 
-        if (data.status === 200) {
-            notyf.success('The withdrawal has been a success')
+        if (!withdrawalData.withdrawal_card_select) {
+            notyf.error('Select a card')
+            return
+        }
+
+
+
+        const data = await HandleApi.postWithdrawal({ id: user[0].id, sourceCard: withdrawalData.withdrawal_card_select, amount: withdrawalData.amount })
+
+
+        if (data.success) {
+            notyf.success(data.message)
             setTimeout(() => {
                 location.reload()
             }, 500);
-
             return
         }
+        notyf.error(data.message)
 
     })
 }

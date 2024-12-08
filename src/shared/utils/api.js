@@ -20,13 +20,11 @@ export class HandleApi {
 
             const data = await response.json()
 
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
+
         } catch (error) {
-            console.error(error.message)
+            console.error(error)
             return data
         }
     }
@@ -45,11 +43,8 @@ export class HandleApi {
 
             const data = await response.json()
 
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             console.error(error.message)
             return data
@@ -94,11 +89,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -117,11 +109,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return { data, status: response.status }
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -140,11 +129,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return { data, status: response.status }
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -163,11 +149,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return { data, status: response.status }
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -186,11 +169,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return { data, status: response.status }
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -209,11 +189,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return { data, status: response.status }
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -231,11 +208,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -253,11 +227,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -275,11 +246,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -297,11 +265,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -319,11 +284,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                return data
-            } else {
-                return data
-            }
+            console.log(data)
+            return data
         } catch (error) {
             return error
         }
@@ -341,12 +303,8 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            if (response.ok) {
-                console.log('Cartas obtenidas:', data)
-                return data
-            } else {
-                throw new Error(data.message || 'Error al obtener Cartas')
-            }
+            console.log(data)
+            return data
         } catch (error) {
             console.error('Error al obtener Cartas:', error)
             throw error

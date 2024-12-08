@@ -1,15 +1,8 @@
 import './header.css'
 import './user-dropdown.css'
 import { HandleApi } from '../utils/api'
-import { Notyf } from 'notyf';
+import { notyf } from '../../shared/components/toast.js'
 
-const notyf = new Notyf({
-    position: {
-        x: 'right',
-        y: 'top',
-    },
-    dismissible: true,
-});
 
 const handleLogOutClick = async () => {
     localStorage.removeItem('userId');
