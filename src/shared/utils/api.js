@@ -306,8 +306,27 @@ export class HandleApi {
             console.log(data)
             return data
         } catch (error) {
-            console.error('Error al obtener Cartas:', error)
-            throw error
+            return error
+        }
+    }
+
+    static async putUserInfo({ id, firstName, firstLastname, phone, email }) {
+        try {
+            const response = await fetch(`${API_URL}/user/update/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                mode: 'cors',
+                credentials: 'include',
+                body: JSON.stringify({ firstName, firstLastname, phone, email }),
+            })
+            const data = await response.json()
+            console.log(data)
+            return data
+
+        } catch (error) {
+            return error
         }
     }
 
