@@ -31,7 +31,7 @@ export const AddStatsCard = ({ totalTransfers, totalIncomes, totalWithdrawal }) 
                 <img src="expense-icon.svg" alt="Expense Icon">
             </div>
             <div class="stat-info">
-                <p class="stat-title">Total Expense</p>
+                <p class="stat-title">Total Withdrawals</p>
                 <p class="stat-value">$${totalWithdrawal}</p>
             </div>
         </div>
