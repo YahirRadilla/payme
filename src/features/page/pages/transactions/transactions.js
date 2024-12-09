@@ -18,6 +18,6 @@ export const getTransactions = async () => {
 
     AddStatsCard({ totalTransfers: totalTransfers.totalTransfers, totalIncomes: totalIncomes.totalIncomes, totalWithdrawal: totalWithdrawal.totalWithdrawal });
     AddTransactions({ transactions });
-    AddFilters();
+    await AddFilters({ id: userId });
 
 };

@@ -272,6 +272,42 @@ export class HandleApi {
         }
     }
 
+    static async getTransactionsFilter({ id, dateTransaction, type }) {
+
+        try {
+
+            const url = new URL(`${API_URL}/transactions/filter/${id}`);
+            const params = new URLSearchParams();
+
+            if (dateTransaction) {
+                params.append('dateTransaction', dateTransaction);
+            }
+
+            if (type && type !== 'Select a type') {
+                params.append('type', type);
+            }
+
+            url.search = params.toString();
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                mode: 'cors',
+                credentials: 'include',
+            });
+
+            const data = await response.json();
+            console.log(data);
+            return data;
+        } catch (error) {
+            console.log(error);
+            return error;
+        }
+    }
+
+
     static async getUser({ id }) {
         try {
             const response = await fetch(`${API_URL}/user/${id}`, {
