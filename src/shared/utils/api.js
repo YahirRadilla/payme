@@ -2,7 +2,7 @@
 
 const API_URL = import.meta.env.API_URL || 'http://localhost:3003'
 
-
+console.log(API_URL)
 
 export class HandleApi {
     // Login

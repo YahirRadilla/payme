@@ -33,8 +33,6 @@ const validateForm = (data) => {
 
 
 const isLogged = async () => {
-
-
     const verifyToken = await HandleApi.verifyToken()
 
     console.log(verifyToken)
