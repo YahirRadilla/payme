@@ -1,6 +1,44 @@
 /* Modal */
 
 
+.confirmation-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    & .confirmation-button {
+        color: #ffffff;
+        margin-top: 20px;
+        border: 1px solid #FFFFFF;
+        outline: none;
+        padding: 10px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        height: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    }
+
+    & .input-cancel {
+        background-color: #515DEF;
+
+        &:hover {
+            background-color: rgba(81, 93, 239, 0.1);
+            transform: scale(1.02);
+            color: #515DEF;
+        }
+    }
+
+    & .input-delete {
+        background-color: #FF6B6B;
+    }
+}
+
+
+
+
+
 /**************************
   Basic Modal Styles
 **************************/

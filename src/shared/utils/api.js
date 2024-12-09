@@ -310,7 +310,7 @@ export class HandleApi {
         }
     }
 
-    static async putUserInfo({ id, firstName, firstLastname, phone, email }) {
+    static async patchUserInfo({ id, firstName, firstLastname, phone, email }) {
         try {
             const response = await fetch(`${API_URL}/user/update/${id}`, {
                 method: 'PATCH',
@@ -320,6 +320,45 @@ export class HandleApi {
                 mode: 'cors',
                 credentials: 'include',
                 body: JSON.stringify({ firstName, firstLastname, phone, email }),
+            })
+            const data = await response.json()
+            console.log(data)
+            return data
+
+        } catch (error) {
+            return error
+        }
+    }
+
+    static async patchUserPassword({ id, password }) {
+        try {
+            const response = await fetch(`${API_URL}/user/update/password/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                mode: 'cors',
+                credentials: 'include',
+                body: JSON.stringify({ password }),
+            })
+            const data = await response.json()
+            console.log(data)
+            return data
+
+        } catch (error) {
+            return error
+        }
+    }
+
+    static async patchDeactivateUser({ id }) {
+        try {
+            const response = await fetch(`${API_URL}/user/deactivate/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                mode: 'cors',
+                credentials: 'include',
             })
             const data = await response.json()
             console.log(data)

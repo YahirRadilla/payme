@@ -3,6 +3,7 @@ import { transferContent } from './transfer-content'
 import { withdrawalContent } from './withdrawal-content'
 import { serviceContent } from './service-content'
 import { depositContent } from './deposit-content'
+import { confirmationContent } from './confirmation-content.js'
 import { notyf } from '../toast.js'
 import { HandleApi } from '../../utils/api'
 
@@ -129,6 +130,27 @@ const withdrawalFormEventListener = async ({ user }) => {
     })
 }
 
+const confirmationClickEventListener = async ({ user }) => {
+    const deleteButton = document.getElementById('delete_account')
+    deleteButton.addEventListener('click', async e => {
+
+        const data = await HandleApi.patchDeactivateUser({ id: user[0].id })
+
+        if (data.success) {
+            notyf.success(data.message)
+            setTimeout(async () => {
+                localStorage.removeItem('userId');
+                const data = await HandleApi.logout()
+                notyf.success(data.message)
+                window.location.href = `/login`
+            }, 500);
+            return
+        }
+        notyf.error(data.message)
+
+    })
+}
+
 
 
 export const Modal = async ({ type, cards, user }) => {
@@ -153,6 +175,10 @@ export const Modal = async ({ type, cards, user }) => {
         case 'withdrawal':
             modal.innerHTML = `${withdrawalContent({ cards })}`
             await withdrawalFormEventListener({ user })
+            break;
+        case 'confirmation':
+            modal.innerHTML = `${confirmationContent()}`
+            await confirmationClickEventListener({ user })
             break;
     }
 

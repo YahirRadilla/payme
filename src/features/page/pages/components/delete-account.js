@@ -13,7 +13,9 @@ export const DeleteAccount = () => {
                     <span class="warning-alert">Warning: This action cannot be undone. Once completed, your account will be permanently deleted.</span>
                 </div>
             </div>
-            <input class="input-delete" type="submit" value="Permanently delete account">
+            
+            <button class="input-delete modal__btn confirmation">Permanently delete account</button>
+            
         </div>
     `;
 };

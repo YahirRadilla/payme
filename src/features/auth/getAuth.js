@@ -17,6 +17,10 @@ const validateForm = (data) => {
             notyf.error('Must be 10 numbers');
             return false
         }
+        if (data.data.password.length < 8) {
+            notyf.error('Passwords Must be at least 8 characters');
+            return
+        }
         if (data.data.password !== data.data.confirmPassword) {
             notyf.error('Passwords doesn´t match');
             return false

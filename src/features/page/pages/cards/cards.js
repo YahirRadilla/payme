@@ -70,7 +70,7 @@ export const getCards = async () => {
             expiredDate: formatToCardExpiration(element.expiration_date),
             cvv: element.cvv,
             balance: element.balance,
-            cardName: user.first_name
+            cardName: user[0].first_name
         })
 
 
