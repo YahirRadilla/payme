@@ -33,7 +33,7 @@ const cardFormEventListener = async ({ user }) => {
         }
 
 
-        console.log(user)
+
         const data = await HandleApi.postCard({ id: user[0].id, cardNumber: cardData.card_number, expirationDate: cardData.expiry_date, cvv: cardData.cvv, balance: cardData.balance })
 
 
@@ -60,7 +60,7 @@ export const getCards = async () => {
 
     await modalListener({ cards, user })
 
-    console.log(cards)
+
 
 
     cards.forEach(element => {

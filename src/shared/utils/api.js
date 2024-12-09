@@ -1,8 +1,7 @@
 
 
-const API_URL = import.meta.env.API_URL || 'http://localhost:3003'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3003'
 
-console.log(API_URL)
 
 export class HandleApi {
     // Login
@@ -20,11 +19,11 @@ export class HandleApi {
 
             const data = await response.json()
 
-            console.log(data)
+
             return data
 
         } catch (error) {
-            console.error(error)
+
             return data
         }
     }
@@ -43,7 +42,7 @@ export class HandleApi {
 
             const data = await response.json()
 
-            console.log(data)
+
             return data
         } catch (error) {
             console.error(error.message)
@@ -265,7 +264,7 @@ export class HandleApi {
             })
 
             const data = await response.json()
-            console.log(data)
+
             return data
         } catch (error) {
             return error

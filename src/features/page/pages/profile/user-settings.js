@@ -77,7 +77,7 @@ const updateUserSettings = async ({ id }) => {
 
             return
         }
-        console.log("Mandar datos")
+
 
         const data = await HandleApi.patchUserInfo({
             id,

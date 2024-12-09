@@ -12,7 +12,7 @@ const path = window.location.pathname;
 const validateForm = (data) => {
 
     if (path === '/register') {
-        console.log(data.data)
+
         if (data.data.phone.length !== 10) {
             notyf.error('Must be 10 numbers');
             return false
@@ -35,7 +35,6 @@ const validateForm = (data) => {
 const isLogged = async () => {
     const verifyToken = await HandleApi.verifyToken()
 
-    console.log(verifyToken)
     if (verifyToken.status === 200) {
         window.location.href = '/'
     }
@@ -54,7 +53,7 @@ export const getAuth = async () => {
         )
 
         const isValid = validateForm({ data })
-        console.log(isValid)
+
         if (!isValid) return
 
         if (path === '/login') await getLogged(data)

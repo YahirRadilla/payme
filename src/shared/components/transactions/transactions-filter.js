@@ -33,7 +33,7 @@ export const AddFilters = async ({ id }) => {
             type: typeFilter.value === 'Select a type' ? null : typeFilter.value,
         });
 
-        console.log(filterTransactions);
+
         AddTransactions({ transactions: filterTransactions });
     });
 };
